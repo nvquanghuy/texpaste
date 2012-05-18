@@ -1,0 +1,38 @@
+<script language="javascript">
+$(function () {
+	$("#new_question_textarea").keyup( function() {
+		var text = $("#new_question_textarea").val();
+		text = convertTextToMathJaxReady(text);
+		$("#new_question_preview_div").html(text);
+		MathJax.Hub.queue.Push(["Typeset", MathJax.Hub, "new_question_preview_div"]);
+	});	
+});
+</script>
+
+<h1>New note</h1>
+
+<form method="post" action="/notes">
+	<div id="new_question_lightbox">
+	    <div id="new_question_lightbox_flowable_div">
+	        <div>
+	            <span class="title"><h4>Title</h4></span>
+	            <!--<input id="new_question_student_email_input" type="text">-->
+	            <input id="title_input" name="note[title]" style="width:500px" type="text">
+	        </div>
+	        <div>
+	            <span class="new_question_header"><h4>Edit</h4></span>
+	            <span class="new_question_header"><h4>Display</h4></span>
+	        </div>
+	        <div>
+	            <div class="new_question_area" id="new_question_latex_edit_div">
+	                <textarea name="note[content]" id="new_question_textarea"></textarea>
+	            </div>
+	            <div class="new_question_area" id="new_question_preview_div">
+	            </div>
+	          </div></br>
+	        <button type="submit" id="save_button" class="primary btn">Save</button>
+	    </div>
+	</div>
+
+
+<%= link_to 'Back', notes_path %>

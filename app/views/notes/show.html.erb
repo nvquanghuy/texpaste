@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+<button id="new_note_button" class="primary btn">Create new note</button>
+<div id="new_question_lightbox">
+  <div id="new_question_lightbox_flowable_div">
+    <div>
+      <span class="title"><h4>Title: <%= @note.title %></h4></span>
+    </div>
+    <div>
+      <span class="new_question_header"><h4>Display</h4></span>
+      <span class="new_question_header"><h4>Edit</h4></span>
+    </div>
+    <div>
+      <div class="new_question_area" id="new_question_preview_div">
+        <%= simple_format(@note.content) %>
+      </div>
+      <div class="new_question_area" id="new_question_latex_edit_div">
+        <textarea id="new_question_textarea"><%=@note.content%></textarea>
+      </div>
+    </div>
+    </br>
+    <div>
+      <span class="share_note_header"><h4>Share this note: </h4></span>
+      <input id="share_note_area" style="width:500px" type="text" value="<%= request.url %>">
+    </div>
+  </div>
+</div>
+
+<%= link_to 'Edit', edit_note_path(@note) %> |
+<%= link_to 'Back', notes_path %>
