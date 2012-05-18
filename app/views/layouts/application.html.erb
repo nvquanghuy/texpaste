@@ -2,12 +2,14 @@
 <html>
 <head>
   <title>TexPaste</title>
+
+
   <%= stylesheet_link_tag    "application", :media => "all" %>
 	<link href="http://www.mathsg.com/assets/bootstrap/bootstrap.min-cec2e1b321a4387e904e8e07d9c69966.css" media="screen" rel="stylesheet" type="text/css" />
-	<link href="/assets/note.css" media="screen" rel="stylesheet" type="text/css" />
+
 	<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-	<%= javascript_include_tag "editor" %>
   <%= javascript_include_tag "application" %>
+	
   <%= csrf_meta_tags %>
 </head>
 <body>

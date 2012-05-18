@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.3'
 
 gem 'rspec-rails'
-
+gem 'thin'
 gem 'pg'
 
 group :assets do
