@@ -18,5 +18,4 @@ tags
 *.sw?
 .DS_Store
 
-config/database.yml
 *~
