@@ -28,10 +28,10 @@ function addExample() {
 
 <form method="post" action="/notes">
 
-<div style="width: 810px; margin: 0 auto; background-color: #eee; padding: 20px 10px; border: solid 1px #ddd">
+<div style="width: 1045px; margin: 0 auto; background-color: #eee; padding: 20px 10px; border: solid 1px #ddd">
 	<div>
-		<div style="width:350px;float:left">
-			<textarea style="width:350px;height:200px" name="note[content]" id="codearea"></textarea>
+		<div style="width:500px;float:left">
+			<textarea style="width:500px;height:200px" name="note[content]" id="codearea"></textarea>
 			<br/><br/>
 			<a href="#" onclick="addExample()">Example</a> <br/>
 
@@ -40,7 +40,7 @@ function addExample() {
 
 		</div>
 		<div style="float:left">
-			<div style="width:350px;background-color:white" id="preview_div"></div>
+			<div class="render_area" id="preview_div"></div>
 		</div>
 		<br clear='all' />
 	</div>

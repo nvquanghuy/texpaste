@@ -26,15 +26,6 @@
     padding: 4px;
 }
 
-#preview_div {
-  min-height: 200px;
-  margin-left: 30px;
-  border-radius: 5px;
-  padding: 4px;
-
-  border: 1px solid #CCC;
-}
-
 #topbar {
     position: relative;
     z-index: 100;
@@ -110,15 +101,23 @@
     overflow-y: auto;
 }
 
-#render_div {
+
+
+.render_area {
   background-color: white;
   border: 1px solid #bbb;
   border-radius: 5px;
   padding: 4px;
   min-height: 200px;
+  line-height: 140%;
+  width: 500px;
 }
 
-
+#render_div {
+}
+#preview_div {
+    margin-left: 30px;
+}
 
 
 #new_question_close_button {
