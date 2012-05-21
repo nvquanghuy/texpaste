@@ -1,32 +1,49 @@
 <script language="javascript">
-$(function () {
-	$("#new_question_textarea").keyup( function() {
-		var text = $("#new_question_textarea").val();
+
+function render() {
+	var text = $("#codearea").val();
 		text = convertTextToMathJaxReady(text);
-		$("#new_question_preview_div").html(text);
-		MathJax.Hub.queue.Push(["Typeset", MathJax.Hub, "new_question_preview_div"]);
-	});	
+		$("#preview_div").html(text);
+		MathJax.Hub.queue.Push(["Typeset", MathJax.Hub, "preview_div"]);
+}
+
+$(function () {
+	$("#codearea").keyup(render);	
 });
+
+function addExample() {
+	var s = "Consider the Euler's equation:\n\n$ e^{i\\pi} + 1 = 0$";
+	$("#codearea").val(s);
+	render();
+}
+
 </script>
 
+<br/> <br/>
+
+<div class='alert-message alert-info' style="width:800px; margin:0 auto">
+	TexPaste is a simple way to create and share Latex-based math notes with others.
+</div>
+<br/>
+
 <form method="post" action="/notes">
-	<div id="new_question_lightbox">
-	    <div id="new_question_lightbox_flowable_div">
-	        <div>
-	            <span class="title"><h4>Title</h4></span>
-	            <input id="title_input" name="note[title]" style="width:500px" type="text">
-	        </div>
-	        <div>
-	            <span class="new_question_header"><h4>Edit</h4></span>
-	            <span class="new_question_header"><h4>Display</h4></span>
-	        </div>
-	        <div>
-	            <div class="new_question_area" id="new_question_latex_edit_div">
-	                <textarea name="note[content]" id="new_question_textarea"></textarea>
-	            </div>
-	            <div class="new_question_area" id="new_question_preview_div">
-	            </div>
-	          </div></br>
-	        <button type="submit" id="save_button" class="primary btn">Save</button>
-	    </div>
+
+<div style="width: 810px; margin: 0 auto; background-color: #eee; padding: 20px 10px; border: solid 1px #ddd">
+	<div>
+		<div style="width:350px;float:left">
+			<textarea style="width:350px;height:200px" name="note[content]" id="codearea"></textarea>
+			<br/><br/>
+			<a href="#" onclick="addExample()">Example</a> <br/>
+
+			<br/> <br/>
+			<button type="submit" id="save_button" class="primary btn">Create Note</button>
+
+		</div>
+		<div style="float:left">
+			<div style="width:350px;background-color:white" id="preview_div"></div>
+		</div>
+		<br clear='all' />
 	</div>
+</div>
+
+</form>

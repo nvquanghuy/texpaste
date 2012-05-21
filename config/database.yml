@@ -9,7 +9,7 @@ development:
   database: texpaste_development
   pool: 5
   username: postgres
-  password: questionbank
+  password: bungau
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -21,7 +21,7 @@ test:
   database: texpaste_test
   pool: 5
   username: postgres
-  password: questionbank
+  password: bungau
   host: localhost
 
 production:
@@ -30,4 +30,4 @@ production:
   database: texpaste_production
   pool: 5
   username: postgres
-  password: questionbank
+  password: bungau
