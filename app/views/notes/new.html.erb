@@ -12,12 +12,51 @@ $(function () {
 });
 
 function addExample() {
-	var s = "Consider the Euler's equation:\n\n$ e^{i\\pi} + 1 = 0$";
-	$("#codearea").val(s);
+	$("#codearea").val($("#example").val());
 	render();
 }
 
 </script>
+
+<textarea id="example" style="display:none">TexPaste provides an online LaTex editor that could be used to facilitate sharing of mathematical notes.
+
+Simple equations, like $x^y$ or $x_n = \sqrt{a + b}$ can be typeset right in the text line by enclosing them in a pair of single dollar sign symbols.
+
+If you want a real dollar sign in your text, like $\$2000$, you have to use the \$\$$ command.
+
+A more complicated equation should be typeset in displayed math mode, like this:
+
+\[
+z 
+\left( 
+1 \ +\ \sqrt{\omega_{i+1} + \zeta -\frac{x+1}{\Theta+1}y + 1}\ 
+\right)
+\ \ \ =\ \ \ 1
+\]
+
+However, this editor does not support all of Latex features, one of which is equation numbering in the "equation" environment.
+
+\[
+\begin{equation}
+\left[
+{\bf X} + {\rm a} \ \geq\
+\underline{\hat a} \sum_i^N \lim_{x \rightarrow \infty} \delta C
+\right]
+\end{equation}
+\]
+
+Another feature from Latex that is not supported by this editor is tables. To present data in tabular form, you might use "array" environment.
+
+\[
+\begin{array}{ccc}
+\text{time} & 0 &  t_1\\
+\hline
+\text{long } F_1 \text{-contract} & 0 & S_1-F_1 \\
+\text{short } F_2 \text{-contract} & 0 & (F_1-F_{1,2})e^{-r(t_2-t_1)} \\
+\hline
+\text{total} & 0 & (F_1-F_{1,2})e^{-r(t_2-t_1)} +S_1-F_1
+\end{array}
+\]</textarea>
 
 <br/> <br/>
 
@@ -28,10 +67,10 @@ function addExample() {
 
 <form method="post" action="/notes">
 
-<div style="width: 1045px; margin: 0 auto; background-color: #eee; padding: 20px 10px; border: solid 1px #ddd">
+<div style="width: 920px; margin: 0 auto; background-color: #eee; padding: 20px 10px; border: solid 1px #ddd">
 	<div>
-		<div style="width:500px;float:left">
-			<textarea style="width:500px;height:200px" name="note[content]" id="codearea"></textarea>
+		<div style="width:400px;float:left">
+			<textarea style="width:380px;min-height:200px" name="note[content]" id="codearea"></textarea>
 			<br/><br/>
 			<a href="#" onclick="addExample()">Example</a> <br/>
 
