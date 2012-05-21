@@ -118,7 +118,7 @@
 
 #preview_div {
     height: 400px;
-    overflow: scroll;
+    overflow: auto;
     margin-left: 10px;
 }
 
