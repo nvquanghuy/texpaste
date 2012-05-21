@@ -1,5 +1,8 @@
 Mathshare::Application.routes.draw do
   resources :notes
+  root :to => 'notes#new'
+  match "/n/:slug" => 'notes#show_slug', :as => :show_slug
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -50,7 +53,6 @@ Mathshare::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'notes#new'
 
   # See how all your routes lay out with "rake routes"
 

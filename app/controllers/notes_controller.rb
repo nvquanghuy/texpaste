@@ -10,8 +10,21 @@ class NotesController < ApplicationController
     end
   end
 
-  # GET /notes/1
-  # GET /notes/1.json
+  # GET /n/9baob
+  # GET /n/9baob.json
+  def show_slug
+    @note = Note.find_by_slug(params[:slug])
+
+    respond_to do |format|
+      format.html {
+        render :show
+      }
+      format.json { render json: @note }
+    end
+  end
+
+  # GET /notes/9baob
+  # GET /notes/9baob.json
   def show
     @note = Note.find(params[:id])
 
@@ -20,6 +33,7 @@ class NotesController < ApplicationController
       format.json { render json: @note }
     end
   end
+
 
   # GET /notes/new
   # GET /notes/new.json
@@ -44,7 +58,7 @@ class NotesController < ApplicationController
 
     respond_to do |format|
       if @note.save
-        format.html { redirect_to @note, notice: 'Note was successfully created.' }
+        format.html { redirect_to show_slug_path(@note.slug), notice: 'Note was successfully created.' }
         format.json { render json: @note, status: :created, location: @note }
       else
         format.html { render action: "new" }
