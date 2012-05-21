@@ -1,5 +1,8 @@
 <script language="javascript">
 $(function() {
+  var text = $("#render_div").html();
+  text = convertTextToMathJaxReady(text);
+  $("#render_div").html(text);
   MathJax.Hub.queue.Push(["Typeset", MathJax.Hub, "render_div"]);
 });
 </script>
@@ -10,9 +13,7 @@ $(function() {
 
 <div style="width: 420px; margin: 0 auto;margin-top:20px; background-color: #eee; padding: 20px 10px; border: solid 1px #ddd">
   <div>
-      <div id="render_div" style="width:400px;">
-        <%= @note.content %>
-      </div>
+    <div id="render_div" style="width:400px;"><%= @note.content %></div>
 
       <br/> <br/> <br/>
 
