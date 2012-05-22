@@ -2,7 +2,7 @@ Mathshare::Application.routes.draw do
   resources :notes
   root :to => 'notes#new'
   match "/n/:slug" => 'notes#show_slug', :as => :show_slug
-
+  match "/manual"  => 'notes#manual', :as => :manual
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -10,6 +10,10 @@ class NotesController < ApplicationController
     end
   end
 
+  def manual
+    # Nothing here yet
+  end
+
   # GET /n/9baob
   # GET /n/9baob.json
   def show_slug

@@ -1,0 +1,48 @@
+<style>
+table#manual {
+	width: 400px;
+	margin: 0 auto;
+}
+table#manual th.code-col {
+	width: 40%;
+}
+#manual .group {
+	font-weight: bold !important;
+	color: blue;
+}
+</style>
+<script language="javascript">
+function render() {
+	var text = $("#codearea").val();
+		text = convertTextToMathJaxReady(text);
+		$("#preview_div").html(text);
+		MathJax.Hub.queue.Push(["Typeset", MathJax.Hub, "preview_div"]);
+}
+</script>
+
+<table id="manual">
+	<thead>
+		<th class='code-col'>Code</th>
+		<th>Result</th>
+	</thead>
+	<tbody>
+		<tr class='group'>
+			<td colspan='2'>
+				Symbols
+			</td>
+		</tr>
+
+		<tr>
+			<td>\sqrt{x}</td>
+			<td>$\sqrt{x}$</td>
+		</tr>
+
+		<tr>
+			<td>\sqrt</td>
+			<td>$\sqrt{x}$</td>
+		</tr>
+
+
+	</tbody>
+
+</table>

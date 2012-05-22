@@ -15,6 +15,11 @@ function addExample() {
 	$("#codearea").val($("#example").val());
 	render();
 }
+function clearInput() {
+	$("#codearea").val("");
+	$("#codearea").focus();
+	render();
+}
 
 </script>
 
@@ -70,9 +75,11 @@ Another feature from Latex that is not supported by this editor is tables. To pr
 <div style="width: 920px; margin: 0 auto; background-color: #eee; padding: 20px 10px; border: solid 1px #ddd">
 	<div>
 		<div style="width:400px;float:left">
-			<textarea style="width:380px;min-height:400px" name="note[content]" id="codearea"></textarea>
+			<textarea placeholder="Enter your math note..." style="width:380px;min-height:400px" name="note[content]" id="codearea"></textarea>
 			<br/><br/>
-			<a href="#" onclick="addExample()">Example</a> <br/>
+			<a href="javascript:" style='color:blue' onclick="addExample()">View Example</a> - 
+			<a href="javascript:" style='color:blue' onclick="clearInput()">Clear</a> 
+			 <br/>
 
 			<br/> <br/>
 			<button type="submit" id="save_button" class="primary btn">Create Note</button>
