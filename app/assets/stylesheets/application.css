@@ -101,8 +101,6 @@
     overflow-y: auto;
 }
 
-
-
 .render_area {
   background-color: white;
   border: 1px solid #bbb;
@@ -121,69 +119,3 @@
     overflow: auto;
     margin-left: 10px;
 }
-
-
-#new_question_close_button {
-    position: absolute;
-    right: 15px;
-    top: 10px;
-}
-
-#MathJax_Message {
-    display: none;
-}
-
-.question_div {
-    border-top: 1px solid #CCC;
-    padding-top: 10px;
-    padding-bottom: 25px;
-    position: relative;
-}
-.posted_by_div {
-    display: inline-block;
-    vertical-align: top;
-    width: 180px;
-    margin-left: 10px;
-    margin-right: 20px;
-    overflow: hidden;
-}
-
-.posted_by_label {
-    color: #888;
-    font-style: italic;
-}
-
-.question_content {
-
-    margin-bottom: 10px;
-
-}
-
-.general_answer_link {
-
-    color: #145d8a;
-
-    margin-right: 20px;
-
-}
-
-.delete_question_link {
-
-    float: right;
-}
-
-.answer_label {
-    font-weight: bold;
-    font-style: italic;
-    text-decoration: underline;
-    margin-bottom: 3px;
-}
-
-.answer_exists {
-    display: inline-block;
-}
-
-.answer_not_exists {
-    display: inline-block;
-}
-
