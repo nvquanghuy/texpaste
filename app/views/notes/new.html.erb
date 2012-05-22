@@ -62,7 +62,7 @@ $(function () {
 		xxx(" $ a + b $ ");
 	});
 	$("#ins-block").click( function() {
-		xxx(" \\[ \n x^2 + y^2 \n \\] ");
+		xxx("\n$$\na + b\n$$");
 	});
 });
 
@@ -553,13 +553,11 @@ function clearInput() {
     </h3>
 <ul>
     <li>
-      <textarea>
-        \begin{align*} 
-        a & = 2 \times 3 + 1 \\ 
-          & = 6 + 1 \\
-          & = 7
-        \end{align*}
-      </textarea>
+      <textarea>\begin{align*}
+a & = 2 \times 3 + 1 \\
+& = 6 + 1 \\
+& = 7
+\end{align*}</textarea>
       <span>
         $\begin{align*} 
         a & = 2 \times 3 + 1 \\ 
