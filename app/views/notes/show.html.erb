@@ -1,33 +1,27 @@
-<script language="javascript">
-$(function() {
-  var text = $("#render_div").html();
-  text = convertTextToMathJaxReady(text);
-  $("#render_div").html(text);
-  MathJax.Hub.queue.Push(["Typeset", MathJax.Hub, "render_div"]);
-
-  $('#expand').click( function() {
-    $("#source").toggle();
-  });
-
-});
-</script>
+<%= javascript_include_tag "note_show" %>
 
 <p id="notice"><%= notice %></p>
 
 <form method="post" action="/notes">
 
-<div style="width: 520px; margin: 0 auto;margin-top:20px; background-color: #eee; padding: 20px 10px; border: solid 1px #ddd">
+<div style="width: 470px; margin: 0 auto;margin-top:20px; background-color: #eee; padding: 20px 10px; border: solid 1px #ddd">
   <div>
     <div id="render_div" class="render_area"><%= @note.content %></div>
 
-      <br/> <br/> <br/>
+    <br/> <br/>
+    <div style="width:462px;margin:0 auto;padding:0;">
+      <a href='javascript:void();' onclick='$("#source").toggle();' id='expand'>View Source</a>
+      <textarea id="source" readonly="readonly" style="background-color:white;display:none;width:450px;min-height:200px"><%=@note.content%></textarea> <br />
 
-      <a href='javascript:void()' id='expand'>View Source</a>
-      <div>
-        <textarea id="source" style="display:none;width:500px;min-height:200px"><%=@note.content%></textarea>
+      <br/>
+
+      Share this note: <input  id="share_note_area" onclick="this.select()" style="display:inline;width:300px" type="text" value="<%= request.url %>">
+    </div>
+
+    <div>
       </div>
 
       <br/>
-      Share this note: <input  id="share_note_area" onclick="this.select()" style="display:inline;width:300px" type="text" value="<%= request.url %>">
+      
   </div>
 </div>

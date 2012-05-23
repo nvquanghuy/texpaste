@@ -55,60 +55,15 @@
     padding: 30px 0px 30px 50px;
 }
 
-#new_question_lightbox_flowable_div {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow-y: auto;
-}
-
-.new_question_header {
-    display: inline-block;
-    width: 390px;
-}
-
-.new_question_email_header {
-    display: inline-block;
-    margin-right: 20px;
-}
-
-.new_question_area {
-    display: inline-block;
-    vertical-align: top;
-}
-
-.student_question_area_header {
-    display: inline-block;
-    vertical-align: top;
-    margin-right: 30px;
-}
-
-#student_question_area {
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 5px;
-}
-
-#new_question_latex_edit_div {
-    position: relative;
-    width: 350px;
-    height: 300px;
-}
-
-#new_question_latex_edit_div textarea {
-    width: 98%;
-    height: 98%;
-    overflow-y: auto;
-}
 
 .render_area {
   background-color: white;
   border: 1px solid #bbb;
   border-radius: 5px;
-  padding: 4px;
+  padding: 6px;
   min-height: 400px;
   line-height: 140%;
-  width: 500px;
+  width: 450px;
 }
 
 #render_div {
@@ -118,4 +73,40 @@
     height: 400px;
     overflow: auto;
     margin-left: 10px;
+}
+
+
+
+#manual {
+    background: white;
+    height: 400px;
+    overflow: auto;
+    margin-right: 10px;
+}
+#manual h3 {
+    clear: both;
+}
+#manual ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#manual ul li textarea {
+    display:none;
+}
+#manual ul li {
+    width: auto; float: left;
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    margin-left: 3px;
+    cursor: pointer;
+}
+#manual ul li:hover {
+    background-color: #eee;
+    cursor: pointer;
 }
