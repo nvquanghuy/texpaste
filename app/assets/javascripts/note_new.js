@@ -1,11 +1,31 @@
+var $code;
+var renderTimeout;
+
+function scheduleRender() {
+	if (renderTimeout) {
+		window.clearTimeout(renderTimeout);
+	}
+	renderTimeout = window.setTimeout(render, 500);
+}
+
+function render() {
+	var text = $code.val();
+	text = convertTextToMathJaxReady(text);
+	$("#preview_div").html(text);
+	MathJax.Hub.queue.Push(["Typeset", MathJax.Hub, "preview_div"]);
+}
+
 
 $(function () {
-	var $code = $("#codearea");
+ 	$code = $("#codearea");
 
-	$("#compile_btn").click( function(e) {
+	$code.keyup(scheduleRender);
+	$code.bind('paste', scheduleRender);
+
+/*	$("#compile_btn").click( function(e) {
 		render();
 		e.preventDefault();
-	});
+	});*/
 
 	$("#manual").tabs(
 		"#manual ul",
@@ -14,46 +34,42 @@ $(function () {
 
 	$code.keydown(function(e) {
 		if (e.which === 9) { // tab key
-			xxx("  ");
+			insertSymbol("  ");
 			e.preventDefault();
 		}
 	} );
 
-	function xxx(x) {
+	function insertSymbol(x) {
 		x = " " + x + " ";
 		$code.insertAtCaret(x);
-		//render();
 		$code[0].focus();
+		scheduleRender();
 	}
 
 	$("#manual li").click( function() {
 		var x = $(this).find('textarea').val();
-		xxx(x);
+		insertSymbol(x);
 	});
 
 	$("#ins-inline").click( function() {
 		$code.surroundSelectedText("$ ", " $");
-		//render();
+		scheduleRender();
 	});
 
 	$("#ins-block").click( function() {
 		$code.surroundSelectedText("$$\n", "\n$$");
+		scheduleRender();
 	});
 
 });
 
-function render() {
-	var text = $("#codearea").val();
-	text = convertTextToMathJaxReady(text);
-	$("#preview_div").html(text);
-	MathJax.Hub.queue.Push(["Typeset", MathJax.Hub, "preview_div"]);
-}
 function addExample() {
-	$("#codearea").val($("#example").val());
+	$code.val($("#example").val());
 	render();
 }
+
 function clearInput() {
-	$("#codearea").val("");
-	$("#codearea").focus();
+	$code.val("");
+	$code.focus();
 	render();
 }
