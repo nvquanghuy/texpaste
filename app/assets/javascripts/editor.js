@@ -9,6 +9,8 @@ $( function() {
 } );
 
 function convertTextToMathJaxReady(a) {
+  if (!a) return "";
+  
     var b = a.split("\n");
     for (var c = 0; c < b.length; c++) {
         var d = 0;
@@ -17,8 +19,7 @@ function convertTextToMathJaxReady(a) {
         for (var f = 0; f < d; f++) e += "&nbsp;";
         e != "" && (b[c] = e + b[c])
     }
-    var tmp = b.join("<br>");
-    return tmp;
+    return b.join("<br>");
 }
 
 jQuery.fn.extend({

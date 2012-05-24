@@ -75,38 +75,41 @@
     margin-left: 10px;
 }
 
-
-
 #manual {
     background: white;
     height: 400px;
     overflow: auto;
     margin-right: 10px;
 }
-#manual h3 {
+#manual h4 {
     clear: both;
 }
 #manual ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: block;
 }
 #manual ul li textarea {
     display:none;
 }
 #manual ul li {
-    width: auto; float: left;
+    width: auto;
+    float: left;
     border: 1px solid #ccc;
     padding: 5px;
-    text-align: center;
     display: block;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 5px;
-    margin-left: 3px;
+    margin: 10px 5px 10px 3px;
     cursor: pointer;
 }
 #manual ul li:hover {
     background-color: #eee;
+    cursor: pointer;
+}
+
+.link {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 5px;
     cursor: pointer;
 }

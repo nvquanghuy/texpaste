@@ -1,3 +1,5 @@
+
+
 $(function () {
 	var $code = $("#codearea");
 
@@ -23,11 +25,14 @@ $(function () {
 	});
 
 	$("#ins-inline").click( function() {
-		xxx(" $ a + b $ ");
+		$code.surroundSelectedText("$ ", " $");
+		render();
 	});
+
 	$("#ins-block").click( function() {
-		xxx("\n$$\na + b\n$$");
+		$code.surroundSelectedText("$$\n", "\n$$");
 	});
+
 });
 
 function render() {
