@@ -9,13 +9,12 @@
 <form method="post" action="/notes">
 
 <div style="width: 1100px; margin-left:30px; background-color: #eee; padding: 20px 10px; border: solid 1px #ddd">
-
     <%= render "manual" %>
     
 		<div style="width:400px;float:left">
 			<textarea placeholder="Enter your math note..." style="width:380px;min-height:400px" name="note[content]" id="codearea"></textarea>
 			<br/><br/>
-			<a href="javascript:" style='color:blue' onclick="addExample()">View Example</a> - 
+			<a href="javascript:" style='color:blue' onclick="addExample()">How this works</a> - 
 			<a href="javascript:" style='color:blue' onclick="clearInput()">Clear</a> 
 			 <br/>
 
@@ -34,36 +33,63 @@
 
 
 
-<textarea id="example" style="display:none">TexPaste provides an online LaTex editor that could be used to facilitate sharing of mathematical notes.
+<textarea id="example" style="display:none">TexPaste provides an online LaTex editor that could be used to facilitate sharing of math notes.
 
-Simple equations, like $x^y$ or $x_n = \sqrt{a + b}$ can be typeset right in the text line by enclosing them in a pair of single dollar sign symbols.
+The middle panel is used for editing code. Once you finish editing and click on the 'Complile' button, the right panel would display the result. 
 
-If you want a real dollar sign in your text, like $\$2000$, you have to use the \$\$$ command.
+The left panel lists commonly used math objects. When you click on a math object, the corresponding Latex code would be inserted into the editing area.
 
-A more complicated equation should be typeset in displayed math mode, like this:
+To share your note with others, please click 'Create Note'.
 
-\[
-z 
-\left( 
-1 \ +\ \sqrt{\omega_{i+1} + \zeta -\frac{x+1}{\Theta+1}y + 1}\ 
-\right)
-\ \ \ =\ \ \ 1
-\]
+To save and organize your notes for future editing, please 'Sign Up' for an TexPaste account.
 
-However, this editor does not support all of Latex features, one of which is equation numbering in the "equation" environment.
+-------------------------------------------------------------------------------------------------
 
-\[
-\begin{equation}
-\left[
-{\bf X} + {\rm a} \ \geq\
-\underline{\hat a} \sum_i^N \lim_{x \rightarrow \infty} \delta C
-\right]
-\end{equation}
-\]
+The following section explains how to use Latex in this editor.
 
-Another feature from Latex that is not supported by this editor is tables. To present data in tabular form, you might use "array" environment.
+Simple equations, like $ x^y $ or $ x_n = \sqrt{a + b} $ can be typeset right in the text line by enclosing them in a pair of single dollar sign symbols.
 
-\[
+If you want a real dollar sign in your text, like $ \$ 1000 $, you have to use the '\' sign before the dollar sign.
+
+A more complicated equation should be typeset in displayed math mode, by enclosing them in a pair of double dollar sign symbols, like this: 
+$$
+i\hbar\frac{\partial \psi}{\partial t}
+  = \frac{-\hbar^2}{2m} \left(
+    \frac{\partial^2}{\partial x^2}
+    + \frac{\partial^2}{\partial y^2}
+    + \frac{\partial^2}{\partial z^2}
+  \right) \psi + V \psi.
+$$
+Some features supported by this editor are listed below. Here is an example of an aligned equation:
+$$
+\begin{align*} 
+1+\tan^2 x & = 1+ \frac{\sin^2 x}{\cos^2 x} \\ 
+&= \frac{\sin^2 x +\cos^2 x }{\cos^2 x} \\ 
+&= \frac{1}{\cos^2 x} \\ 
+&= \sec^2 x.
+\end{align*}
+$$
+And this is an example of a piecewise function:
+$$
+f(x) = 
+\begin{cases} 
+1                           & \text {if $x=1$} \\
+1+x+x^2+\cdots   & \text{if $x = 0$} \\ 
+\dfrac{1}{1-x}        & \text{if $x = -1$} \\
+\text{undefined}    & \text{otherwise} \\  
+\end{cases} 
+$$
+Matrix is another commonly used math object:
+$$
+ \begin{pmatrix}
+a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\
+a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
+\vdots  & \vdots  & \ddots & \vdots  \\
+a_{m,1} & a_{m,2} & \cdots & a_{m,n}
+\end{pmatrix} 
+$$
+To create tables, you can use 'array' environment as followed:
+$$
 \begin{array}{ccc}
 \text{time} & 0 &  t_1\\
 \hline
@@ -72,4 +98,4 @@ Another feature from Latex that is not supported by this editor is tables. To pr
 \hline
 \text{total} & 0 & (F_1-F_{1,2})e^{-r(t_2-t_1)} +S_1-F_1
 \end{array}
-\]</textarea>
+$$</textarea>
