@@ -21,21 +21,36 @@
 	    </div>
 	</div>
 
-<%= yield %>
+  <%= yield %>
 
-<script type="text/javascript">
+  <div id="user_nav">
+    <% if current_user %>
+      Logged in as <%= current_user.email %>.
+      <%= link_to "Log out", log_out_path %>
+    <% else %>
+      <%= link_to "Sign up", sign_up_path %> or
+      <%= link_to "log in", log_in_path %>
+    <% end %>
+  </div>
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-31924834-1']);
-  _gaq.push(['_trackPageview']);
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+  <% end %>
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
 
-</script>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31924834-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
 
 </body>
 </html>

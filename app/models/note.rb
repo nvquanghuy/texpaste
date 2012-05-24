@@ -1,4 +1,5 @@
 class Note < ActiveRecord::Base
+	belongs_to :user
   attr_accessible :content, :title, :slug
   before_create :generate_slug
 

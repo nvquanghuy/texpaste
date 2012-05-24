@@ -1,8 +1,19 @@
 Mathshare::Application.routes.draw do
+
   resources :notes
   root :to => 'notes#new'
   match "/n/:slug" => 'notes#show_slug', :as => :show_slug
   match "/manual"  => 'notes#manual', :as => :manual
+
+  get "log_out" => "sessions#destroy", :as => "log_out"
+  get "log_in" => "sessions#new", :as => "log_in"
+  get "sign_up" => "users#new", :as => "sign_up"
+
+  get "sessions/new"
+  get "users/new"
+
+  resources :users
+  resources :sessions
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
