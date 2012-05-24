@@ -1,3 +1,4 @@
+<script src="http://cdn.jquerytools.org/1.2.7/all/jquery.tools.min.js"></script>
 <%= javascript_include_tag "note_new" %>
 
 <br/>
@@ -8,15 +9,22 @@
 
 <form method="post" action="/notes">
 
-<div style="width: 1100px; margin-left:30px; background-color: #eee; padding: 20px 10px; border: solid 1px #ddd">
-    <%= render "manual" %>
+<div style="width: 1120px; margin-left:30px; background-color: #eee; padding: 20px 10px; border: solid 1px #ddd">
+	<div style="width:210px;margin-right:20px;float:left">
+		<%= render "manual" %>
+		<br/>
+	
+		<strong><a href="javascript:" style='color:blue' onclick="addExample()">How this works</a></strong>
+	</div>
     
 		<div style="width:400px;float:left">
 			<textarea placeholder="Enter your math note..." style="width:380px;min-height:400px" name="note[content]" id="codearea"></textarea>
 			<br/><br/>
-			<a href="javascript:" style='color:blue' onclick="addExample()">How this works</a> - 
-			<a href="javascript:" style='color:blue' onclick="clearInput()">Clear</a> 
-			 <br/>
+			<div>
+				<button id="compile_btn" class="error btn">Compile</button> &nbsp;
+				<a href="javascript:" style='color:blue' onclick="clearInput()">Clear</a> 
+			</div>
+			
 
 			<br/> <br/>
 			<button type="submit" id="save_button" class="primary btn">Create Note</button>
@@ -35,23 +43,9 @@
 
 <textarea id="example" style="display:none">TexPaste provides an online LaTex editor that could be used to facilitate sharing of math notes.
 
-The middle panel is used for editing code. Once you finish editing and click on the 'Complile' button, the right panel would display the result. 
+Wrap inline equation in a pair of single dollar signs $\$$ ...  $\$$ : $ x_n = \sqrt{a + b} $ and you can continue writing on the same line.
 
-The left panel lists commonly used math objects. When you click on a math object, the corresponding Latex code would be inserted into the editing area.
-
-To share your note with others, please click 'Create Note'.
-
-To save and organize your notes for future editing, please 'Sign Up' for an TexPaste account.
-
--------------------------------------------------------------------------------------------------
-
-The following section explains how to use Latex in this editor.
-
-Simple equations, like $ x^y $ or $ x_n = \sqrt{a + b} $ can be typeset right in the text line by enclosing them in a pair of single dollar sign symbols.
-
-If you want a real dollar sign in your text, like $ \$ 1000 $, you have to use the '\' sign before the dollar sign.
-
-A more complicated equation should be typeset in displayed math mode, by enclosing them in a pair of double dollar sign symbols, like this: 
+A more complicated equation should be wrapped in a pair of double dollar signs:
 $$
 i\hbar\frac{\partial \psi}{\partial t}
   = \frac{-\hbar^2}{2m} \left(
@@ -60,6 +54,8 @@ i\hbar\frac{\partial \psi}{\partial t}
     + \frac{\partial^2}{\partial z^2}
   \right) \psi + V \psi.
 $$
+
+-------------
 Some features supported by this editor are listed below. Here is an example of an aligned equation:
 $$
 \begin{align*} 

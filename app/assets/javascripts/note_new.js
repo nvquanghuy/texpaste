@@ -1,9 +1,16 @@
 
-
 $(function () {
 	var $code = $("#codearea");
 
-	$code.keyup(render);
+	$("#compile_btn").click( function(e) {
+		render();
+		e.preventDefault();
+	});
+
+	$("#manual").tabs(
+		"#manual ul",
+		{tabs: 'h4', effect: 'slide', initialIndex:0}
+	);
 
 	$code.keydown(function(e) {
 		if (e.which === 9) { // tab key
@@ -15,7 +22,7 @@ $(function () {
 	function xxx(x) {
 		x = " " + x + " ";
 		$code.insertAtCaret(x);
-		render();
+		//render();
 		$code[0].focus();
 	}
 
@@ -26,7 +33,7 @@ $(function () {
 
 	$("#ins-inline").click( function() {
 		$code.surroundSelectedText("$ ", " $");
-		render();
+		//render();
 	});
 
 	$("#ins-block").click( function() {
