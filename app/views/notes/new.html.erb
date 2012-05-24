@@ -9,13 +9,14 @@
 
 <form method="post" action="/notes">
 
-<div style="width: 1120px; margin-left:30px; background-color: #eee; padding: 20px 10px; border: solid 1px #ddd">
-	<div style="width:210px;margin-right:20px;float:left;">
+	<div style="width:210px;border: solid 1px #ddd;margin-left:20px;margin-right:10px;float:left;background-color: #eee;padding:5px;">
+		<br/>
 		<%= render "manual" %>
 		<br/>
 	
 		<strong><a href="javascript:" style='color:blue' onclick="addExample()">How this works</a></strong>
 	</div>
+<div style="float:left; width: 900px; margin-left:10px; background-color: #eee; padding: 20px 10px; border: solid 1px #ddd">
     
 		<div style="width:400px;float:left">
 			<textarea placeholder="Enter your math note..." style="width:380px;min-height:400px" name="note[content]" id="codearea"></textarea>
@@ -30,6 +31,7 @@
 		</div>
 		<br clear='all' />
 </div>
+<br clear='all' />
 
 </form>
 
