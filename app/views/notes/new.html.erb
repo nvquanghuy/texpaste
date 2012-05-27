@@ -1,5 +1,3 @@
-<script src="http://cdn.jquerytools.org/1.2.7/all/jquery.tools.min.js"></script>
-<%= javascript_include_tag "note_new" %>
 
 <br/>
 <div class='alert-message alert-info' style="width:800px; margin:0 auto">
@@ -7,17 +5,23 @@
 </div>
 <br/>
 
-<form method="post" action="/notes">
+<script src="http://cdn.jquerytools.org/1.2.7/all/jquery.tools.min.js"></script>
+<%= javascript_include_tag "note_new" %>
+
+<%= form_for(@note) do |f| %>
 
 	<div style="width:210px;border: solid 1px #ddd;margin-left:20px;margin-right:10px;float:left;background-color: #eee;padding:5px;">
 		<br/>
 		<%= render "manual" %>
 		<br/>
-	
+
 		<strong><a href="javascript:" style='color:blue' onclick="addExample()">How this works</a></strong>
 	</div>
-<div style="float:left; width: 900px; margin-left:10px; background-color: #eee; padding: 20px 10px; border: solid 1px #ddd">
-    
+
+	<div style="float:left; width: 900px; margin-left:10px; background-color: #eee; padding: 10px 10px; border: solid 1px #ddd">
+		<div style='margin-bottom:10px'>
+			<input name="note[title]" style='width:300px' placeholder="Note description (optional)" value="<%=@note.title%>" />
+		</div>
 		<div style="width:400px;float:left">
 			<textarea placeholder="Enter your math note..." style="width:380px;min-height:400px" name="note[content]" id="codearea"></textarea>
 
@@ -33,9 +37,7 @@
 </div>
 <br clear='all' />
 
-</form>
-
-
+<% end #form %>
 
 
 <textarea id="example" style="display:none">TexPaste provides an online LaTex editor that could be used to facilitate sharing of math notes.

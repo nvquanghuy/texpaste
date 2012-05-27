@@ -19,13 +19,11 @@ function render() {
 $(function () {
  	$code = $("#codearea");
 
+ 	$code.focus();
+ 	render();
+
 	$code.keyup(scheduleRender);
 	$code.bind('paste', scheduleRender);
-
-/*	$("#compile_btn").click( function(e) {
-		render();
-		e.preventDefault();
-	});*/
 
 	$("#manual").tabs(
 		"#manual ul",

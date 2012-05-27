@@ -3,7 +3,6 @@
 <head>
   <title>TexPaste</title>
 
-
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= stylesheet_link_tag    "bootstrap.min", :media => "all" %>
 	<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -21,21 +20,27 @@
 	    </div>
 	</div>
 
-  <%= yield %>
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+  <% end %>
 
-  <div id="user_nav">
+
+
+    <div id="user_nav">
+      <br/>
     <% if current_user %>
-      Logged in as <%= current_user.email %>.
-      <%= link_to "Log out", log_out_path %>
+      Logged in as <%= current_user.email %>. <%= link_to "Log out", log_out_path %> -
+      <%= link_to("Manage Notes", manage_path()) %>
     <% else %>
       <%= link_to "Sign up", sign_up_path %> or
       <%= link_to "log in", log_in_path %>
     <% end %>
   </div>
 
-  <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, :id => "flash_#{name}" %>
-  <% end %>
+
+
+  <%= yield %>
+
 
 
   <script type="text/javascript">

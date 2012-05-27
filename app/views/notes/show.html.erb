@@ -1,27 +1,58 @@
 <%= javascript_include_tag "note_show" %>
 
-<p id="notice"><%= notice %></p>
-
-<form method="post" action="/notes">
-
-<div style="width: 470px; margin: 0 auto;margin-top:20px; background-color: #eee; padding: 20px 10px; border: solid 1px #ddd">
+<div style="width: 490px;margin-left:30px;margin-top:10px;float:left">
+<div style="background-color: #eee; padding:12px 10px; border: solid 1px #ddd">
   <div>
-    <div id="render_div" class="render_area"><%= @note.content %></div>
+    <div id="render_div" class="render_area"><%= @note.content.html_safe %></div>
 
-    <br/> <br/>
+    <br/>
     <div style="width:462px;margin:0 auto;padding:0;">
       <a href='javascript:void();' onclick='$("#source").toggle();' id='expand'>View Source</a>
       <textarea id="source" readonly="readonly" style="background-color:white;display:none;width:450px;min-height:200px"><%=@note.content%></textarea> <br />
 
       <br/>
 
-      Share this note: <input  id="share_note_area" onclick="this.select()" style="display:inline;width:300px" type="text" value="<%= request.url %>">
     </div>
 
     <div>
       </div>
 
       <br/>
-      
   </div>
 </div>
+</div>
+<div style="width: 300px;margin-left:30px;margin-top:10px;float:left">
+  <div style="background-color: #eee; padding:12px 10px; border: solid 1px #ddd">
+    Share this note: <input  id="share_note_area" onclick="this.select()" style="display:inline;width:250px" type="text" value="<%= request.url %>">
+
+    <br/>
+    <br/>
+    <% if (current_user.id == @note.user_id) then %>
+
+      <%= link_to('Edit', edit_note_path(@note.slug) ) %>
+      <%= link_to "Delete", { :action => "destroy", :id => @note.id },
+          :confirm => "Are you sure?", :method => :delete %>
+
+    <% end %>
+
+  </div>
+
+  <div style="background-color: #eee; padding:0 10px; margin-top: 10px; border: solid 1px #ddd">
+    <h3>Author's notes</h3>
+    <ul class="notes">
+    <% @author_notes.each do |note| %>
+      <li>
+        <%= link_to( "Note: #{note.slug}", show_slug_path(note.slug)) %>
+        <%= note.title %>
+        <br/>
+        <span style='font-size:95%'>created a minute ago</span>
+      </li>
+    <% end %>
+    </ul>
+
+    <br/>
+  </div>
+
+  
+</div>
+<br clear='all' />

@@ -114,3 +114,40 @@
     padding: 5px;
     cursor: pointer;
 }
+
+ul.notes {
+
+}
+
+ul.notes li {
+  list-style-type: none;
+  margin: 0;
+  padding: 3px 0 3px 20px;
+  font-size: 12px;
+  color: #999;
+  border-bottom: 1px solid#DDD;
+  background: url(paste.png) 0px 4px no-repeat;
+}
+
+.note {
+  margin: 0 0 10px 0;
+  border: 1px solid #D9D9D9;
+  background: whiteSmoke;
+}
+.note .meta {
+  padding: 7px 10px;
+  background: #E9E9E9;
+  color:#666;
+  font-size: 12px;
+  border-bottom: 1px solid #D9D9D9;
+}
+
+.note .data {
+  padding: 10px; 
+  overflow: auto;
+  background-color: ghostWhite;
+}
+
+.right {
+  float: right;
+}

@@ -2,38 +2,34 @@ class NotesController < ApplicationController
   # GET /notes
   # GET /notes.json
   def index
-    @notes = Note.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @notes }
-    end
+    redirect_to manage_path
   end
 
   def manual
     # Nothing here yet
   end
 
-  # GET /n/9baob
-  # GET /n/9baob.json
-  def show_slug
-    @note = Note.find_by_slug(params[:slug])
-
-    respond_to do |format|
-      format.html {
-        render :show
-      }
-      format.json { render json: @note }
-    end
+  # GET /manage
+  def manage
+    #TODO: Check for auth
+    @author_notes = Note.where(:user_id => current_user.id)
   end
 
   # GET /notes/9baob
   # GET /notes/9baob.json
   def show
-    @note = Note.find(params[:id])
+    @note = Note.find_by_slug(params[:slug])
 
+    if (@note == nil) then
+      redirect_to("/", notice: 'There is no note found')
+      return
+    end
+
+    @author_notes = Note.where(:user_id => current_user.id)
     respond_to do |format|
-      format.html # show.html.erb
+      format.html {
+        render :show
+      }
       format.json { render json: @note }
     end
   end
@@ -50,19 +46,20 @@ class NotesController < ApplicationController
     end
   end
 
-  # GET /notes/1/edit
+  # GET /notes/9baob/edit
   def edit
-    @note = Note.find(params[:id])
+    @note = Note.find_by_slug(params[:slug])
   end
 
   # POST /notes
   # POST /notes.json
   def create
     @note = Note.new(params[:note])
+    @note.user_id = current_user.id if current_user
 
     respond_to do |format|
       if @note.save
-        format.html { redirect_to show_slug_path(@note.slug), notice: 'Note was successfully created.' }
+        format.html { redirect_to show_path(@note.slug), notice: 'Note was successfully created.' }
         format.json { render json: @note, status: :created, location: @note }
       else
         format.html { render action: "new" }
@@ -78,7 +75,7 @@ class NotesController < ApplicationController
 
     respond_to do |format|
       if @note.update_attributes(params[:note])
-        format.html { redirect_to @note, notice: 'Note was successfully updated.' }
+        format.html { redirect_to show_path(@note.slug), notice: 'Note was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -94,7 +91,7 @@ class NotesController < ApplicationController
     @note.destroy
 
     respond_to do |format|
-      format.html { redirect_to notes_url }
+      format.html { redirect_to manage_path }
       format.json { head :no_content }
     end
   end

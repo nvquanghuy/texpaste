@@ -1,0 +1,36 @@
+<div style="width: 490px;margin-left:30px;margin-top:10px;float:left">
+  <div style="padding:12px 10px; border: solid 1px #ddd">
+    <div id='notes'>
+      <% @author_notes.each do |note| %> 
+        <div class='note'>
+          <div class='meta'>
+            <%= link_to( "Note ##{note.slug}", show_slug_path(note.slug)) %> <%= note.title %>
+
+            <span class='right'>
+              <%= link_to('Edit', edit_note_path(note.slug) ) %>
+              <%= link_to "Delete", { :action => "destroy", :id => note.id },
+                    :confirm => "Are you sure?", :method => :delete %>
+            </span>
+
+          </div>
+          <div class='data'>
+            <%= truncate(note.content, :length => 300).gsub("\r\n","<br/>").html_safe  %>
+          </div>
+          <div class='bottom'>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <br/>
+    <%= button_to( "New note", "/", :class => "btn primary" ) %>
+  </div>
+</div>
+
+<% if false then %>
+<div style="width: 300px;margin-left:30px;margin-top:10px;float:left">
+  <div style="background-color: #eee; padding:0 10px; margin-top: 10px; border: solid 1px #ddd">
+  </div>
+</div>
+<% end %>
+
+<br clear='all' />
