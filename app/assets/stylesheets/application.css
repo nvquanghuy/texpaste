@@ -14,6 +14,36 @@
  *= require note
 */
 
+#main {
+  background: url("https://a248.e.akamai.net/assets.github.com/images/gist/header/background-v2.png?52494096") repeat-x scroll 0 -17px white;
+  height: auto !important;
+  margin: 0 auto -8.6em;
+  min-height: 100%;
+}
+
+#header {
+  height: 80px;
+  margin-bottom: 20px;
+  width: auto;
+}
+#header .logo {
+  float: left;
+  margin-top: 18px;
+}
+#header .userbox {
+  float: right;
+  font-size: 16px;
+  padding: 8px 5px 7px 10px;
+}
+
+.site {
+  margin: 0 auto;
+  min-width: 920px;
+  overflow: hidden;
+  padding: 0 3em;
+  text-align: left;
+}
+
 .shadow {
   box-shadow: 0 2px 2px #bababa;
   -moz-box-shadow: 0 2px 2px #bababa;
@@ -140,4 +170,9 @@ ul.notes li {
 
 .right {
   float: right;
+}
+
+#codearea {
+  color: #000 !important;
+  font: Helvetica 9pt;
 }

@@ -12,36 +12,33 @@
 </head>
 <body>
 
-	<div class="topbar" id="topbar">
-	    <div class="topbar-inner">
-	        <div class="container">
-	            <a href="/" class="brand">TexPaste - Share your math</a>
-	        </div>
-	    </div>
-	</div>
+  <div id="main">
+    <div id="header">
+      <div class='site'>
+        <div class='logo'>
+          <h1><a style='color:black' href="/">TexPaste</a></h1>
+        </div>
+        <div class='userbox'>
+          <% if current_user %>
+            Hello <%= current_user.email %>.
+            <%= link_to("Manage Notes", manage_path()) %>.
+            <%= link_to "Log out", log_out_path %>
+          <% else %>
+            <%= link_to "Sign up", sign_up_path %>. 
+            <%= link_to "Log in", log_in_path %>
+          <% end %>
+        </div>
+      </div>
+    </div>
 
-  <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, :id => "flash_#{name}" %>
-  <% end %>
-
-
-
-    <div id="user_nav">
-      <br/>
-    <% if current_user %>
-      Logged in as <%= current_user.email %>. <%= link_to "Log out", log_out_path %> -
-      <%= link_to("Manage Notes", manage_path()) %>
-    <% else %>
-      <%= link_to "Sign up", sign_up_path %> or
-      <%= link_to "log in", log_in_path %>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
     <% end %>
-  </div>
-
-
 
   <%= yield %>
 
 
+</div>
 
   <script type="text/javascript">
 
@@ -56,6 +53,7 @@
     })();
 
   </script>
+
 
 </body>
 </html>
