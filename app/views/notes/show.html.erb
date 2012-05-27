@@ -42,7 +42,7 @@
     <ul class="notes">
     <% @author_notes.each do |note| %>
       <li>
-        <%= link_to( "Note: #{note.slug}", show_slug_path(note.slug)) %>
+        <%= link_to( "Note: #{note.slug}", show_path(note.slug)) %>
         <%= note.title %>
         <br/>
         <span style='font-size:95%'>created a minute ago</span>

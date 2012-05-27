@@ -4,7 +4,7 @@
       <% @author_notes.each do |note| %> 
         <div class='note'>
           <div class='meta'>
-            <%= link_to( "Note ##{note.slug}", show_slug_path(note.slug)) %> <%= note.title %>
+            <%= link_to( "Note ##{note.slug}", show_path(note.slug)) %> <%= note.title %>
 
             <span class='right'>
               <%= link_to('Edit', edit_note_path(note.slug) ) %>
@@ -14,7 +14,7 @@
 
           </div>
           <div class='data'>
-            <%= truncate(note.content, :length => 300).gsub("\r\n","<br/>").html_safe  %>
+            <%= truncate(note.content, :length => 400).gsub("\r\n","<br/>").html_safe  %>
           </div>
           <div class='bottom'>
           </div>
