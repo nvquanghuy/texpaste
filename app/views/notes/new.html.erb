@@ -1,6 +1,8 @@
+<!--
 <div class='alert-message alert-info' style="width:800px; margin:0 auto">
 	TexPaste is a simple way to create and share Latex-based math notes with others.
 </div>
+-->
 <br/>
 
 <script src="http://cdn.jquerytools.org/1.2.7/all/jquery.tools.min.js"></script>
@@ -8,12 +10,12 @@
 
 <%= form_for(@note) do |f| %>
 
-	<div style="width:210px;border: solid 1px #ddd;margin-left:20px;margin-right:10px;float:left;background-color: #eee;padding:5px;">
+	<div style="width:210px;border: solid 1px #ddd;margin-left:45px;margin-right:10px;float:left;background-color: #eee;padding:5px;">
 		<br/>
 		<%= render "manual" %>
 		<br/>
 
-		<strong><a href="javascript:" style='color:blue' onclick="addExample()">How this works</a></strong>
+		<!--<strong><a href="javascript:" style='color:blue' onclick="addExample()">How this works</a></strong>-->
 	</div>
 
 	<div style="float:left; width: 900px; margin-left:10px; background-color: #eee; padding: 10px 10px; border: solid 1px #ddd">
@@ -28,8 +30,11 @@
 			<a href="javascript:" style='color:blue' onclick="clearInput()">Clear</a> 
 
 		</div>
+
 		<div style="float:left">
 			<div class="render_area" id="preview_div"></div>
+			<br/>
+			<strong><a href="javascript:" style='color:blue' onclick="addExample()">HOW THIS WORKS</a></strong>
 		</div>
 		<br clear='all' />
 </div>
