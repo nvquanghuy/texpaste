@@ -27,7 +27,7 @@
 
     <br/>
     <br/>
-    <% if (current_user.id == @note.user_id) then %>
+    <% if (current_user and current_user.id == @note.user_id) then %>
 
       <%= link_to('Edit', edit_note_path(@note.slug) ) %>
       <%= link_to "Delete", { :action => "destroy", :id => @note.id },
