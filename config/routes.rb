@@ -7,9 +7,9 @@ Mathshare::Application.routes.draw do
   match "/manual"  => 'notes#manual', :as => :manual
   match "/manage" => 'notes#manage', :as => :manage
 
-  get "log_out" => "sessions#destroy", :as => "log_out"
-  get "log_in" => "sessions#new", :as => "log_in"
-  get "sign_up" => "users#new", :as => "sign_up"
+  get "logout" => "sessions#destroy", :as => "log_out"
+  get "login" => "sessions#new", :as => "log_in"
+  get "signup" => "users#new", :as => "sign_up"
 
   get "sessions/new"
   get "users/new"

@@ -23,17 +23,24 @@
 
 #header {
   height: 80px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   width: auto;
 }
 #header .logo {
   float: left;
-  margin-top: 18px;
+  margin-top: 10px;
 }
+#header .logo h1 {
+  margin-bottom: 0;
+}
+#header .logo div {
+  
+}
+
 #header .userbox {
   float: right;
   font-size: 16px;
-  padding: 8px 5px 7px 10px;
+  padding: 15px 5px 7px 10px;
 }
 
 .site {
