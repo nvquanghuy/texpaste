@@ -27,9 +27,8 @@ class NotesController < ApplicationController
 
 
     @author_notes = []
-    logger.debug( current_user.to_yaml )
-    if (current_user != nil and current_user.id != nil) then
-      @author_notes = Note.where(:user_id => current_user.id)
+    if (@note.user_id != nil) then
+      @author_notes = Note.where(:user_id => @note.user_id)
     end
     
     respond_to do |format|
