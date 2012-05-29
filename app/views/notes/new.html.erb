@@ -21,6 +21,9 @@
 	<div style="float:left; width: 900px; margin-left:10px; background-color: #eee; padding: 10px 10px; border: solid 1px #ddd">
 		<div style='margin-bottom:10px'>
 			<input name="note[title]" style='width:300px' placeholder="Note description (optional)" value="<%=@note.title%>" />
+			<div style='float:right;margin-top:5px;margin-right:5px'>
+				<strong><a href="javascript:" style='color:blue' onclick="addExample()">HOW THIS WORKS</a></strong>
+			</div>
 		</div>
 		<div style="width:400px;float:left">
 			<textarea placeholder="Enter your math note..." style="width:380px;min-height:400px" name="note[content]" id="codearea"></textarea>
@@ -33,8 +36,6 @@
 
 		<div style="float:left">
 			<div class="render_area" id="preview_div"></div>
-			<br/>
-			<strong><a href="javascript:" style='color:blue' onclick="addExample()">HOW THIS WORKS</a></strong>
 		</div>
 		<br clear='all' />
 </div>
