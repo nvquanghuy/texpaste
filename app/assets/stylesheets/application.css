@@ -110,7 +110,8 @@
     margin-right: 10px;
 }
 #manual h4 {
-    clear: both;
+  clear: both;
+  cursor: pointer;
 }
 #manual ul {
     list-style: none;
