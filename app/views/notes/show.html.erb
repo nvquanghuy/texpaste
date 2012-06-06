@@ -2,7 +2,6 @@
 
 <div style="width: 490px;margin-left:30px;margin-top:10px;float:left">
 
-
 <div style="background-color: #eee; padding:12px 10px; border: solid 1px #ddd">
   <div>
     <% if @note.title %>
@@ -10,6 +9,8 @@
     <% end %> 
 
     <div id="render_div" class="render_area"><%= @note.content.html_safe %></div>
+    Created <%= time_ago_in_words(@note.created_at) %> ago.
+
 
     <br/>
     <div style="width:462px;margin:0 auto;padding:0;">
@@ -52,7 +53,7 @@
         <%= link_to( "Note: #{note.slug}", show_path(note.slug)) %>
         <%= note.title %>
         <br/>
-        <span style='font-size:95%'>created a minute ago</span>
+        <span style='font-size:95%'>Created <%= time_ago_in_words(note.created_at) %> ago.</span>
       </li>
     <% end %>
     </ul>
