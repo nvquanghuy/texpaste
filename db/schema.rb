@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(:version => 20120525032017) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "slug"
-    t.integer   "user_id"
+    t.integer  "user_id"
   end
 
   add_index "notes", ["slug"], :name => "index_notes_on_slug", :unique => true

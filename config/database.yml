@@ -6,10 +6,10 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: texpaste_development
+  database: texpaste
   pool: 5
-  username: postgres
-  password: bungau
+  username: viki
+  password: 
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
