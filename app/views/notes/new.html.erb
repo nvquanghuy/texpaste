@@ -20,12 +20,15 @@
 	<div style="float:left; width: 900px; margin-left:10px; background-color: #eee; padding: 10px 10px; border: solid 1px #ddd">
 		<div style='margin-bottom:10px'>
 			<input name="note[title]" style='width:300px' placeholder="Note description (optional)" value="<%=@note.title%>" />
-			<div style='float:right;margin-top:5px;margin-right:5px'>
+			<div style='display:inline-block;margin-left: 10px;margin-top:5px;margin-right:5px'>
 				<strong><a href="javascript:" style='color:blue' onclick="addExample()">HOW THIS WORKS</a></strong>
 			</div>
 		</div>
 		<div style="width:400px;float:left">
-			<textarea placeholder="Enter your math note..." style="width:380px;min-height:400px" name="note[content]" id="codearea"></textarea>
+			<textarea placeholder="Enter your math note..." style="width:380px;min-height:400px" name="note[content]" id="codearea">Enter your math formula inside dollar signs, something like:
+$$
+  x^2 + 2x + 1 = 0
+$$</textarea>
 
 			<br/> <br/>
 			<button type="submit" id="save_button" class="primary btn">Create Note</button> &nbsp;
