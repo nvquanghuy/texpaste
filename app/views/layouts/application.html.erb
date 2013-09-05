@@ -5,11 +5,16 @@
 
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= stylesheet_link_tag    "bootstrap.min", :media => "all" %>
-	<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   <%= javascript_include_tag "application" %>
-  <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
-  <meta name="description" content="Share math notes with others using LaTeX on TexPaste" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-tools/1.2.7/jquery.tools.min.js"></script>
 
+  <% if request.ssl? %>
+    <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <% else %>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <% end %>
+
+  <meta name="description" content="Share math notes with others using LaTeX on TexPaste" />
 
   <%= csrf_meta_tags %>
 </head>
@@ -28,7 +33,7 @@
             <%= link_to("Manage Notes", manage_path()) %>.
             <%= link_to "Log out", log_out_path %>
           <% else %>
-            <%= link_to "Sign up", sign_up_path %>. 
+            <%= link_to "Sign up", sign_up_path %>.
             <%= link_to "Log in", log_in_path %>
           <% end %>
         </div>
