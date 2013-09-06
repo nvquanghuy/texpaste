@@ -15,7 +15,6 @@ function render() {
 	MathJax.Hub.queue.Push(["Typeset", MathJax.Hub, "preview_div"]);
 }
 
-
 $(function () {
  	$code = $("#codearea");
 
@@ -24,11 +23,6 @@ $(function () {
 
 	$code.keyup(scheduleRender);
 	$code.bind('paste', scheduleRender);
-
-	$("#manual").tabs(
-		"#manual ul",
-		{tabs: 'h4', effect: 'slide', initialIndex:0}
-	);
 
 	$code.keydown(function(e) {
 		if (e.which === 9) { // tab key

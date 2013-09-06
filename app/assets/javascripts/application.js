@@ -14,3 +14,4 @@
 //= require jquery_ujs
 //= require editor
 //= require jquery_rangyinputs
+//= require_tree

@@ -1,3 +1,13 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+$ ->
+  $('#manual h4').click (e) ->
+    panel = $(this).next()
+    if panel.is(':visible')
+      panel.slideUp(duration: 200)
+    else
+      panel.slideDown(duration: 200)
+
+    return false
+
+  # show the first box
+  $('#manual ul').hide()
+  $('#manual ul:first').show()
