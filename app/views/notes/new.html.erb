@@ -5,16 +5,12 @@
 -->
 <br/>
 
-<%= javascript_include_tag "note_new" %>
-
 <%= form_for(@note) do |f| %>
 
 	<div style="width:210px;border: solid 1px #ddd;margin-left:45px;margin-right:10px;float:left;background-color: #eee;padding:5px;">
 		<br/>
 		<%= render "manual" %>
 		<br/>
-
-		<!--<strong><a href="javascript:" style='color:blue' onclick="addExample()">How this works</a></strong>-->
 	</div>
 
 	<div style="float:left; width: 900px; margin-left:10px; background-color: #eee; padding: 10px 10px; border: solid 1px #ddd">
@@ -27,8 +23,9 @@
 		<div style="width:400px;float:left">
 			<textarea placeholder="Enter your math note..." style="width:380px;min-height:400px" name="note[content]" id="codearea">Enter your math formula inside dollar signs, something like:
 $$
-  x^2 + 2x + 1 = 0
-$$</textarea>
+  \int_{a}^{b} f'(x) \, dx  = f(b) - f(a)
+$$
+For inline equation, use single dollar sign: $ a^2 + b^2 = c^2 $</textarea>
 
 			<br/> <br/>
 			<button type="submit" id="save_button" class="primary btn">Create Note</button> &nbsp;
@@ -99,3 +96,5 @@ $$
 \text{total} & 0 & (F_1-F_{1,2})e^{-r(t_2-t_1)} +S_1-F_1
 \end{array}
 $$</textarea>
+
+<script language="javascript">$(function() { newNoteInit(); });</script>

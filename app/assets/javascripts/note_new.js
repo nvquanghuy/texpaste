@@ -15,7 +15,7 @@ function render() {
 	MathJax.Hub.queue.Push(["Typeset", MathJax.Hub, "preview_div"]);
 }
 
-$(function () {
+window.newNoteInit = function() {
  	$code = $("#codearea");
 
  	$code.focus();
@@ -53,7 +53,7 @@ $(function () {
 		scheduleRender();
 	});
 
-});
+}
 
 function addExample() {
 	$code.val($("#example").val());
