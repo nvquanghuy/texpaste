@@ -10,7 +10,6 @@
  *
  *= require_self
  *= require_tree .
- *= require note
 */
 
 #main {
@@ -180,6 +179,7 @@ ul.notes li {
 }
 
 #codearea {
-  color: #000 !important;
+  color: #000;
+  background-color: #fff;
   font: Helvetica 9pt;
 }
