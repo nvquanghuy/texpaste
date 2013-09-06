@@ -21,11 +21,14 @@
 			</div>
 		</div>
 		<div style="width:400px;float:left">
-			<textarea placeholder="Enter your math note..." style="width:380px;min-height:400px" name="note[content]" id="codearea">Enter your math formula inside dollar signs, something like:
-$$
-  \int_{a}^{b} f'(x) \, dx  = f(b) - f(a)
-$$
-For inline equation, use single dollar sign: $ a^2 + b^2 = c^2 $</textarea>
+			<textarea placeholder="Enter your math note..." style="width:380px;min-height:400px" name="note[content]" id="codearea">Enter your math formula like this:
+\[
+\int_{a}^{b} f'(x) \, dx  = f(b) - f(a)
+\]
+For inline equation, use round bracket instead: \( a^2 + b^2 = c^2 \)
+
+For simplicity, you can use double/single dollar signs: $ x = \frac{\pi}{2} $
+$$ sin x = 1 $$</textarea>
 
 			<br/> <br/>
 			<button type="submit" id="save_button" class="primary btn">Create Note</button> &nbsp;
@@ -45,29 +48,33 @@ For inline equation, use single dollar sign: $ a^2 + b^2 = c^2 $</textarea>
 
 <textarea id="example" style="display:none">TexPaste provides an online LaTex editor that could be used to facilitate sharing of math notes.
 
-Wrap inline equation in a pair of single dollar signs $\$$ ...  $\$$ : $ x_n = \sqrt{a + b} $ and you can continue writing on the same line.
+Wrap inline equation like this: \( x_n = \sqrt{a + b} \) and you can continue writing on the same line.
 
-A more complicated equation should be wrapped in a pair of double dollar signs:
-$$
+For simplicity, you can also use double/single dollar signs for block/inline, like this: $ x - 1 = 0 $, or:
+$$ a^n + b^n = c^n $$
+(this is the old TeX syntax, LaTeX support it though).
+
+A more complicated equation should be rendered in block:
+\[
 i\hbar\frac{\partial \psi}{\partial t}
   = \frac{-\hbar^2}{2m} \left(
     \frac{\partial^2}{\partial x^2}
     + \frac{\partial^2}{\partial y^2}
     + \frac{\partial^2}{\partial z^2}
   \right) \psi + V \psi.
-$$
+\]
 
 Some features supported by this editor are listed below. Here is an example of an aligned equation:
-$$
+\[
 \begin{align*} 
 1+\tan^2 x & = 1+ \frac{\sin^2 x}{\cos^2 x} \\ 
 &= \frac{\sin^2 x +\cos^2 x }{\cos^2 x} \\ 
 &= \frac{1}{\cos^2 x} \\ 
 &= \sec^2 x.
 \end{align*}
-$$
+\]
 And this is an example of a piecewise function:
-$$
+\[
 f(x) = 
 \begin{cases} 
 1                           & \text {if $x=1$} \\
@@ -75,18 +82,18 @@ f(x) =
 \dfrac{1}{1-x}        & \text{if $x = -1$} \\
 \text{undefined}    & \text{otherwise} \\  
 \end{cases} 
-$$
+\]
 Matrix is another commonly used math object:
-$$
+\[
  \begin{pmatrix}
 a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\
 a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
 \vdots  & \vdots  & \ddots & \vdots  \\
 a_{m,1} & a_{m,2} & \cdots & a_{m,n}
 \end{pmatrix} 
-$$
+\]
 To create tables, you can use 'array' environment as followed:
-$$
+\[
 \begin{array}{ccc}
 \text{time} & 0 &  t_1\\
 \hline
@@ -95,6 +102,6 @@ $$
 \hline
 \text{total} & 0 & (F_1-F_{1,2})e^{-r(t_2-t_1)} +S_1-F_1
 \end{array}
-$$</textarea>
+\]</textarea>
 
 <script language="javascript">$(function() { newNoteInit(); });</script>

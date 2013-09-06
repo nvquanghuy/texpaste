@@ -44,12 +44,12 @@ window.newNoteInit = function() {
 	});
 
 	$("#ins-inline").click( function() {
-		$code.surroundSelectedText("$ ", " $");
+		$code.surroundSelectedText("\\( ", " \\)");
 		scheduleRender();
 	});
 
 	$("#ins-block").click( function() {
-		$code.surroundSelectedText("$$\n", "\n$$");
+		$code.surroundSelectedText("\\[\n", "\n\\]");
 		scheduleRender();
 	});
 
