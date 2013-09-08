@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   def redirect_herokuapp
     if request.host == 'texpaste.herokuapp.com'
       qs = request.query_string.present? ? '?' + request.query_string : ''
-      redirect_to request.protocol + 'www.texpaste.com' + request.path + qs
+      redirect_to request.protocol + 'www.texpaste.com' + request.path + qs, status: 301
     end
   end
 
