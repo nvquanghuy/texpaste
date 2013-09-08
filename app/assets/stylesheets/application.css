@@ -24,15 +24,17 @@
   margin-bottom: 10px;
   width: auto;
 }
+
 #header .logo {
   float: left;
   margin-top: 10px;
 }
+
 #header .logo h1 {
   margin-bottom: 0;
 }
+
 #header .logo div {
-  
 }
 
 #header .userbox {
@@ -56,93 +58,83 @@
 }
 
 .content-box {
-    background-color: white;
-    width: 900px;
-    margin: 0 auto;  
-    padding: 4px;
+  background-color: white;
+  width: 900px;
+  margin: 0 auto;
+  padding: 4px;
 }
 
 #topbar {
-    position: relative;
-    z-index: 100;
+  position: relative;
+  z-index: 100;
 }
 
 #codeinput_textarea {
-    height: 200px;
+  height: 200px;
 }
 
 #new_question_lightbox {
-    margin: 0 auto;
-    width: 810px;
-    background-color: white;
-    vertical-align: middle;
-    border-radius: 10px;
-    border: 1px solid black;
-    padding: 30px 0px 30px 50px;
-}
-
-
-.render_area {
+  margin: 0 auto;
+  width: 810px;
   background-color: white;
-  border: 1px solid #bbb;
-  border-radius: 5px;
-  padding: 6px;
-  min-height: 400px;
-  line-height: 140%;
-  width: 450px;
+  vertical-align: middle;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 30px 0px 30px 50px;
 }
 
 #render_div {
 }
 
 #preview_div {
-    height: 400px;
-    overflow: auto;
-    margin-left: 10px;
+  height: 400px;
+  overflow: auto;
+  margin-left: 10px;
 }
 
 #manual {
-    background: white;
-    height: 400px;
-    overflow: auto;
-    margin-right: 10px;
+  background: white;
+  height: 400px;
+  overflow: auto;
+  margin-right: 10px;
 }
+
 #manual h4 {
   clear: both;
   cursor: pointer;
 }
+
 #manual ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block;
 }
+
 #manual ul li textarea {
-    display:none;
+  display: none;
 }
+
 #manual ul li {
-    width: auto;
-    float: left;
-    border: 1px solid #ccc;
-    padding: 5px;
-    display: block;
-    margin: 10px 5px 10px 3px;
-    cursor: pointer;
+  width: auto;
+  float: left;
+  border: 1px solid #ccc;
+  padding: 5px;
+  display: block;
+  margin: 10px 5px 10px 3px;
+  cursor: pointer;
 }
+
 #manual ul li:hover {
-    background-color: #eee;
-    cursor: pointer;
+  background-color: #eee;
+  cursor: pointer;
 }
 
 .link {
-    background-color: white;
-    border: 1px solid #ccc;
-    padding: 5px;
-    cursor: pointer;
-}
-
-ul.notes {
-
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 5px;
+  cursor: pointer;
 }
 
 ul.notes li {
@@ -151,7 +143,7 @@ ul.notes li {
   padding: 3px 0 3px 20px;
   font-size: 12px;
   color: #999;
-  border-bottom: 1px solid#DDD;
+  border-bottom: 1px solid #DDD;
   background: url(paste.png) 0px 4px no-repeat;
 }
 
@@ -160,16 +152,17 @@ ul.notes li {
   border: 1px solid #D9D9D9;
   background: whiteSmoke;
 }
+
 .note .meta {
   padding: 7px 10px;
   background: #E9E9E9;
-  color:#666;
+  color: #666;
   font-size: 12px;
   border-bottom: 1px solid #D9D9D9;
 }
 
 .note .data {
-  padding: 10px; 
+  padding: 10px;
   overflow: auto;
   background-color: ghostWhite;
 }
