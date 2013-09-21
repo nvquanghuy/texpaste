@@ -1,31 +1,32 @@
 <br/>
 <%= form_for(@note) do |f| %>
 
-	<div style="width:210px;border: solid 1px #ddd;margin-left:20px;margin-right:10px;float:left;background-color: #eee;padding:5px;">
-		<br/>
-		<%= render "manual" %>
-		<br/>
-	</div>
+  <div style="width:210px;border: solid 1px #ddd;margin-left:20px;margin-right:10px;float:left;background-color: #eee;padding:5px;">
+    <br/>
+    <%= render "manual" %>
+    <br/>
+  </div>
 
-	<div style="float:left; width: 900px; margin-left:10px; background-color: #eee; padding: 10px 10px; border: solid 1px #ddd">
-		<div style='margin-bottom:10px'>
-			<input name="note[title]" style='width:300px' placeholder="Note description (optional)" value="<%=@note.title%>" />
-		</div>
-		<div style="width:400px;float:left">
-			<textarea placeholder="Enter your math note..." style="width:380px;min-height:400px" name="note[content]" id="codearea"><%=@note.content%></textarea>
+  <div style="float:left; width: 900px; margin-left:10px; background-color: #eee; padding: 10px 10px; border: solid 1px #ddd">
+    <div style='margin-bottom:10px'>
+      <input name="note[title]" style='width:300px' placeholder="Note description (optional)" value="<%= @note.title %>"/>
+    </div>
+    <div style="width:400px;float:left">
+      <textarea placeholder="Enter your math note..." style="width:380px;min-height:400px" name="note[content]" id="codearea"><%= @note.content %></textarea>
 
-			<br/> <br/>
-			<button type="submit" id="save_button" class="primary btn">Update Note</button> &nbsp;
-			<a href="javascript:" style='color:blue' onclick="clearInput()">Clear</a> 
+      <br/> <br/>
+      <button type="submit" id="save_button" class="primary btn">Update Note</button>
+      &nbsp;
+      <a href="javascript:" style='color:blue' onclick="clearInput()">Clear</a>
 
-		</div>
-		<div style="float:left">
-			<div class="render_area" id="preview_div"></div>
-		</div>
-		<br clear='all' />
-</div>
-<br clear='all' />
+    </div>
+    <div style="float:left">
+      <div class="render_area" id="preview_div"></div>
+    </div>
+    <br clear='all'/>
+  </div>
+  <br clear='all'/>
 
-<% end #form %>
+<% end #form   %>
 
-<%= javascript_include_tag "note_new" %>
+<script language="javascript"> $(function () { newNoteInit(); }); </script>
