@@ -10,9 +10,13 @@ function scheduleRender() {
 
 function render() {
 	var text = $code.val();
+  var $div = $("#preview_div");
 	text = convertTextToMathJaxReady(text);
-	$("#preview_div").html(text);
+
+  var pos = $div.scrollTop();
+  $div.html(text);
 	MathJax.Hub.queue.Push(["Typeset", MathJax.Hub, "preview_div"]);
+  $div.scrollTop(pos);
 }
 
 window.newNoteInit = function() {
