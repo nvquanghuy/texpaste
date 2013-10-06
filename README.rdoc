@@ -1,12 +1,13 @@
 == TexPaste
 The PasteBin for Mathematicians. Visit app at http://www.texpaste.com
 
+See more information at TexPaste About Page: http://www.texpaste.com/about
+
 Built with Rails with MathJax rendering engine. Hosted on Heroku.
 
 == Contributing
 Feel free to submit patches to contribute to the project.
 
-
-Created by Huy Nguyen (nvquanghuy). Credits to:
+Created by Huy Nguyen. Credits to:
 - Nguyen Hai My: Worked on this together
 - Tran Minh Luan: JS rendering code

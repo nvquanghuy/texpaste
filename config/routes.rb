@@ -13,6 +13,7 @@ Mathshare::Application.routes.draw do
 
   get "sessions/new"
   get "users/new"
+  get 'about' => 'pages#about'
 
   resources :users
   resources :sessions
