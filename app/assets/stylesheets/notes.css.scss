@@ -1,13 +1,40 @@
-// Place all the styles related to the Notes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.cheatsheet {
+  border: solid 1px #ddd;
+  background-color: #eee;
+  padding: 5px;
+}
 
-.render_area {
+.editor-wrapper {
+  background-color: #eee;
+  padding: 10px 10px;
+  border: solid 1px #ddd;
+
+  input.title {
+    width: 300px;
+  }
+
+  #codearea {
+    color: #000;
+    background-color: #fff;
+    width: 100%;
+    min-height: 400px;
+    resize: vertical;
+    font-size: 13px;
+    padding: 5px;
+  }
+}
+
+.render {
   background-color: white;
   border: 1px solid #bbb;
-  border-radius: 5px;
+  border-radius: 2px;
   padding: 6px;
   min-height: 400px;
   line-height: 140%;
-  width: 450px;
+  width: 100%;
+  font-size: 12px;
+}
+
+.render-show {
+  font-size: 13px;
 }

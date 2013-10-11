@@ -1,13 +1,13 @@
-<h1>Log in</h1>
+<div class='container'>
+  <%= form_tag sessions_path, class: 'form-auth' do %>
+    <h2>Log in</h2>
+    <p>
+      <%= text_field_tag :email, params[:email], placeholder: 'Email', class: 'form-control' %>
+    </p>
+    <p>
+      <%= password_field_tag :password, '', placeholder: 'Password', class: 'form-control' %>
+    </p>
+    <p><%= submit_tag "Log in", class: 'btn btn-primary' %></p>
+  <% end %>
 
-<%= form_tag sessions_path do %>
-  <p>
-    <%= label_tag :email %><br />
-    <%= text_field_tag :email, params[:email] %>
-  </p>
-  <p>
-    <%= label_tag :password %><br />
-    <%= password_field_tag :password %>
-  </p>
-  <p class="button"><%= submit_tag "Log in" %></p>
-<% end %>
+</div>

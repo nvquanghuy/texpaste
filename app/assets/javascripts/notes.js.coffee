@@ -1,5 +1,5 @@
 $ ->
-  $('#manual h4').click (e) ->
+  $('#manual h5').click (e) ->
     panel = $(this).next()
     if panel.is(':visible')
       panel.slideUp(duration: 200)

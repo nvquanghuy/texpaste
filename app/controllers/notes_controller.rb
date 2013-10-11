@@ -1,33 +1,23 @@
 class NotesController < ApplicationController
-  # GET /notes
-  # GET /notes.json
   def index
     redirect_to manage_path
   end
 
-  def manual
-    # Nothing here yet
-  end
-
-  # GET /manage
   def manage
     #TODO: Check for auth
     @author_notes = Note.where(:user_id => current_user.id)
   end
 
-  # GET /notes/9baob
-  # GET /notes/9baob.json
   def show
     @note = Note.find_by_slug(params[:slug])
 
-    if (@note == nil) then
+    if @note == nil then
       redirect_to("/", notice: 'There is no note found')
       return
     end
 
-
     @author_notes = []
-    if (@note.user_id != nil) then
+    if @note.user_id != nil then
       @author_notes = Note.where(:user_id => @note.user_id)
     end
     
@@ -39,9 +29,6 @@ class NotesController < ApplicationController
     end
   end
 
-
-  # GET /notes/new
-  # GET /notes/new.json
   def new
     @note = Note.new
 
@@ -51,13 +38,10 @@ class NotesController < ApplicationController
     end
   end
 
-  # GET /notes/9baob/edit
   def edit
     @note = Note.find_by_slug(params[:slug])
   end
 
-  # POST /notes
-  # POST /notes.json
   def create
     @note = Note.new(params[:note])
     @note.user_id = current_user.id if current_user
@@ -73,8 +57,6 @@ class NotesController < ApplicationController
     end
   end
 
-  # PUT /notes/1
-  # PUT /notes/1.json
   def update
     @note = Note.find(params[:id])
 
@@ -89,8 +71,6 @@ class NotesController < ApplicationController
     end
   end
 
-  # DELETE /notes/1
-  # DELETE /notes/1.json
   def destroy
     @note = Note.find(params[:id])
     @note.destroy

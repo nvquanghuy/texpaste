@@ -1,25 +1,38 @@
 <%= form_for(@note) do |f| %>
-  <% if @note.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@note.errors.count, "error") %> prohibited this note from being saved:</h2>
-
-      <ul>
-      <% @note.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+  <div class="container container-left row">
+    <div class='col-md-3'>
+      <div class='cheatsheet'>
+        <%= render "manual" %>
+      </div>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_field :content %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+    <div class='col-md-9 editor-wrapper'>
+      <div class='row col-md-12'>
+        <p>
+          <input name="note[title]" class='title' placeholder="Note's title (optional)" value="<%= @note.title %>"/>
+          <% if @note.id.blank? %>
+            <strong><a href="javascript:" style='color: blue' onclick="addExample()">HOW THIS WORKS</a></strong>
+          <% end %>
+        </p>
+      </div>
+
+      <div class='row'>
+        <div class='col-md-6'>
+          <p><textarea placeholder="Enter your math note..." name="note[content]" id="codearea"><%= render "text_first" %></textarea> </p>
+          <p>
+            <button type="submit" id="save_button" class="btn-primary btn"><%= submit_text_for(@note) %> </button>
+            &nbsp;
+            <a href="javascript:" style='color: blue' onclick="clearInput()">Clear</a>
+          </p>
+        </div>
+        <div class='col-md-6'>
+          <div class="render" id="preview_div"></div>
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>
+
+<script language="javascript">$(function () {
+  newNoteInit();
+});</script>

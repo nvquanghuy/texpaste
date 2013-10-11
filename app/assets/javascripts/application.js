@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require editor
 //= require jquery_rangyinputs
+//= require bootstrap
 //= require_tree

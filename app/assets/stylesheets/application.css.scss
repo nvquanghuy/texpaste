@@ -1,54 +1,69 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
+ *= require bootstrap
  *= require_self
  *= require_tree .
 */
 
-#main {
-  background: url("https://a248.e.akamai.net/assets.github.com/images/gist/header/background-v2.png?52494096") repeat-x scroll 0 -17px white;
-  height: auto !important;
-  margin: 0 auto -8.6em;
+html, body {
+  height: 100%;
+}
+
+#wrap {
   min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
 }
 
-#header {
-  height: 80px;
-  margin-bottom: 10px;
-  width: auto;
+#footer {
+  height: 40px;
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px #C7DFFF solid;
+  padding-left: 20px;
 }
 
-#header .logo {
-  float: left;
-  margin-top: 10px;
+.navbar-inverse {
+  background-color: #4679bd;
+  border: 0;
+  border-radius: 0;
+
+  .navbar-header {
+    .navbar-brand {
+      a, a:visited {
+        color: #fff;
+      }
+
+      span {
+        display: inline-block;
+        margin-left: 10px;
+        font-size: 80%;
+        color: #fff;
+      }
+    }
+  }
+
+  .navbar-nav {
+    li {
+      a, a:visited {
+        color: #fff;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
-#header .logo h1 {
-  margin-bottom: 0;
+.container-left {
+  margin-left: 0;
 }
 
-#header .logo div {
-}
-
-#header .userbox {
-  float: right;
-  font-size: 16px;
-  padding: 15px 5px 7px 10px;
-}
-
-.site {
-  margin: 0 auto;
-  min-width: 920px;
-  overflow: hidden;
-  padding: 0 3em;
-  text-align: left;
+.btn, .form-control {
+  border-radius: 2px;
 }
 
 .shadow {
@@ -83,25 +98,21 @@
   padding: 30px 0px 30px 50px;
 }
 
-#render_div {
-}
-
 #preview_div {
   height: 400px;
   overflow: auto;
-  margin-left: 10px;
 }
 
 #manual {
   background: white;
-  height: 400px;
+  height: 470px;
   overflow: auto;
-  margin-right: 10px;
-}
+  padding: 5px;
 
-#manual h4 {
-  clear: both;
-  cursor: pointer;
+  h5 {
+    clear: both;
+    cursor: pointer;
+  }
 }
 
 #manual ul {
@@ -167,12 +178,6 @@ ul.notes li {
   background-color: ghostWhite;
 }
 
-.right {
-  float: right;
-}
-
-#codearea {
-  color: #000;
-  background-color: #fff;
-  font: Helvetica 9pt;
+.form-auth {
+  max-width: 330px;
 }
