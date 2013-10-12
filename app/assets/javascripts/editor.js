@@ -7,7 +7,6 @@ $(function () {
       ["\\(", "\\)"]
     ]}
   });
-
 });
 
 function convertTextToMathJaxReady(a) {

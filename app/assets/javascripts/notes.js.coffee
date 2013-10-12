@@ -1,20 +1,52 @@
-$ ->
-  $('#manual h5').click (e) ->
-    panel = $(this).next()
-    if panel.is(':visible')
-      panel.slideUp(duration: 200)
-    else
-      panel.slideDown(duration: 200)
+app.controller 'NoteEditorCtrl', ['$scope', '$http', '$timeout', ($scope, $http, $timeout) ->
+  $scope.groups = []
 
-    return false
+  renderTimeout = null;
+  $render = $('#render')
+  $code = $("#codearea")
 
-  # show the first box
-  $('#manual ul').hide()
-  $('#manual ul:first').show()
+  fetchSymbols = ->
+    $http.get('/symbols.json').success (response) ->
+      $scope.groups = response;
 
+  render = ->
+    content_str = convertTextToMathJaxReady($code.val())
 
-window.showNoteInit = ->
-  text = $("#render_div").html()
-  text = convertTextToMathJaxReady(text)
-  $("#render_div").html(text)
-  MathJax.Hub.queue.Push(["Typeset", MathJax.Hub, "render_div"])
+    pos = $render.scrollTop()
+    $render.html content_str
+    MathJax.Hub.queue.Push ["Typeset", MathJax.Hub, "render"]
+    $render.scrollTop pos
+
+  delayRender = ->
+    $timeout.cancel(renderTimeout) if renderTimeout
+    renderTimeout = $timeout(render, 500)
+
+  setupEditor = ->
+    $code.keyup delayRender
+    $code.bind "paste", delayRender
+    $code.keydown (e) ->
+      if e.which is 9 # tab key
+        $scope.insertSymbol "  "
+        e.preventDefault()
+
+    $code[0].focus()
+    render()
+
+  $scope.init = ->
+    fetchSymbols()
+    setupEditor()
+
+  $scope.insertSymbol = (str) ->
+    $code.insertAtCaret str
+    $code[0].focus()
+    delayRender()
+
+  $scope.howItWorks = ->
+    $code.val $("#example").val()
+    delayRender()
+
+  $scope.clear = ->
+    $code.val('')
+    delayRender()
+
+]

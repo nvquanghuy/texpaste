@@ -12,7 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require editor
-//= require jquery_rangyinputs
+//= require angular
 //= require bootstrap
+//= require jquery_rangyinputs
+//= require app
+//= require editor
+//= require note_new
 //= require_tree
+

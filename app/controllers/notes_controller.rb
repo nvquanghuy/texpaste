@@ -3,15 +3,20 @@ class NotesController < ApplicationController
     redirect_to manage_path
   end
 
+  def symbols
+    @hash ||= YAML.load_file(Rails.root.join('vendor/symbols.yml'))
+    render json: @hash
+  end
+
   def manage
-    #TODO: Check for auth
+    # TODO: Check for auth
     @author_notes = Note.where(:user_id => current_user.id)
   end
 
   def show
     @note = Note.find_by_slug(params[:slug])
 
-    if @note == nil then
+    if @note == nil
       redirect_to("/", notice: 'There is no note found')
       return
     end

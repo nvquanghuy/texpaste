@@ -1,0 +1,537 @@
+--- 
+- 
+  name: "Greek Letters"
+  symbols: 
+    - 
+      code: \alpha
+      name: Alpha
+    - 
+      code: \beta
+      name: Beta
+    -
+      code: \gamma
+      name: Gama
+    - 
+      code: \delta
+      name: Delta
+    - 
+      code: \epsilon
+      name: Epsilon
+    - 
+      code: \kappa
+      name: Kappa
+    - 
+      code: \theta
+      name: Theta
+    - 
+      code: \lambda
+      name: Lambda
+    - 
+      code: \mu
+      name: Mu
+    - 
+      code: \xi
+      name: Xi
+    - 
+      code: \pi
+      name: Pi
+    - 
+      code: \sigma
+      name: Sigma
+    - 
+      code: \phi
+      name: Phi
+    - 
+      code: \chi
+      name: ""
+    - 
+      code: \psi
+      name: ""
+    - 
+      code: \omega
+      name: ""
+    - 
+      code: \Gamma
+      name: ""
+    - 
+      code: \Delta
+      name: ""
+    - 
+      code: \Sigma
+      name: ""
+    - 
+      code: \Phi
+      name: ""
+    - 
+      code: \Psi
+      name: ""
+    - 
+      code: \Omega
+      name: ""
+- 
+  name: "Types of Numbers"
+  symbols: 
+    - 
+      code: "\\mathbb{N}"
+      name: ""
+    - 
+      code: "\\mathbb{Z}"
+      name: ""
+    - 
+      code: "\\mathbb{Q}"
+      name: ""
+    - 
+      code: "\\mathbb{R}"
+      name: ""
+    - 
+      code: "\\mathbb{C}"
+      name: ""
+- 
+  name: "Powers and Indices"
+  symbols: 
+    - 
+      code: "x^{n}"
+      name: ""
+    - 
+      code: "x_{k}"
+      name: ""
+    - 
+      code: "x_{k}^{n}"
+      name: ""
+- 
+  name: Brackets
+  symbols: 
+    - 
+      code: "\\left( x \\right)"
+      name: ""
+    - 
+      code: "\\left| x \\right|"
+      name: ""
+    - 
+      code: "\\left[ x \\right]"
+      name: ""
+    - 
+      code: "\\left\\{ x \\right\\}"
+      name: ""
+- 
+  name: "Common Functions"
+  symbols: 
+    - 
+      code: "\\sqrt{x}"
+      name: ""
+    - 
+      code: "\\sqrt[n]{x}"
+      name: ""
+    - 
+      code: "e^{x}"
+      name: ""
+    - 
+      code: "\\exp x"
+      name: ""
+    - 
+      code: "\\log_{a} b"
+      name: ""
+    - 
+      code: "\\log x"
+      name: ""
+    - 
+      code: "\\lg x"
+      name: ""
+    - 
+      code: "\\ln x"
+      name: ""
+    - 
+      code: "\\sin x"
+      name: ""
+    - 
+      code: "\\cos x"
+      name: ""
+    - 
+      code: "\\tan x"
+      name: ""
+    - 
+      code: "\\cot x"
+      name: ""
+    - 
+      code: "\\sec x"
+      name: ""
+    - 
+      code: "\\csc x"
+      name: ""
+    - 
+      code: \arcsin
+      name: ""
+    - 
+      code: \arccos
+      name: ""
+    - 
+      code: \sinh
+      name: ""
+    - 
+      code: \cosh
+      name: ""
+- 
+  name: "Sums and Products"
+  symbols: 
+    - 
+      code: "\\sum_{i=1}^{n} x_{i}"
+      name: ""
+    - 
+      code: "\\sum_{i=1}^{\\infty} x_{i}"
+      name: ""
+    - 
+      code: "\\prod_{i=1}^{n} x_{i}"
+      name: ""
+    - 
+      code: "\\prod_{i=1}^{\\infty} x_{i}"
+      name: ""
+    - 
+      code: "x_1 + x_2 + x_3 + \\ldots + x_n"
+      name: ""
+- 
+  name: "Lim, Inf, Sup and Del"
+  symbols: 
+    - 
+      code: \infty
+      name: ""
+    - 
+      code: "x \\to \\infty"
+      name: ""
+    - 
+      code: "\\lim_{x \\to \\infty} f(x)"
+      name: ""
+    - 
+      code: "\\inf_{x \\in X} f(x)"
+      name: ""
+    - 
+      code: "\\sup_{x \\in X} f(x)"
+      name: ""
+    - 
+      code: \nabla
+      name: ""
+    - 
+      code: \nabla^2
+      name: ""
+    - 
+      code: "\\nabla \\cdot z"
+      name: ""
+    - 
+      code: "\\nabla \\times z"
+      name: ""
+- 
+  name: Derivatives
+  symbols: 
+    - 
+      code: "\\frac{dy}{dx}"
+      name: ""
+    - 
+      code: "\\frac{\\partial z}{\\partial x}"
+      name: ""
+    - 
+      code: "\\frac{d^2 y}{dx^2}"
+      name: ""
+    - 
+      code: "\\frac{\\partial^2 z}{\\partial x^2}"
+      name: ""
+- 
+  name: Integrals
+  symbols: 
+    - 
+      code: "\\int_{a}^{b} f(x) \\, dx"
+      name: ""
+    - 
+      code: "\\int_{-\\infty}^{b} f(x) \\, dx"
+      name: ""
+    - 
+      code: "\\int_{a}^{\\infty} f(x) \\, dx"
+      name: ""
+    - 
+      code: "\\int_{-\\infty}^{\\infty} f(x) \\, dx"
+      name: ""
+    - 
+      code: "\\int_{a}^{b} \\! \\int_{a}^{b} f(x,y) \\,dx\\,dy"
+      name: ""
+    - 
+      code: "\\int \\!\\!\\! \\int_D f(x,y) \\, dx \\, dy"
+      name: ""
+    - 
+      code: "\\int \\!\\!\\! \\int \\!\\!\\! \\int_{D} f(x,y,z) \\, dx \\, dy \\, dz"
+      name: ""
+- 
+  name: "Binary Operations"
+  symbols: 
+    - 
+      code: "a + b"
+      name: ""
+    - 
+      code: "a - b"
+      name: ""
+    - 
+      code: "a \\pm b"
+      name: ""
+    - 
+      code: "a \\times b"
+      name: ""
+    - 
+      code: "a \\cdot b"
+      name: ""
+    - 
+      code: "a \\div b"
+      name: ""
+    - 
+      code: "a \\oplus b"
+      name: ""
+    - 
+      code: "a \\ominus b"
+      name: ""
+    - 
+      code: "a \\odot b"
+      name: ""
+    - 
+      code: "a \\otimes b"
+      name: ""
+    - 
+      code: "\\binom{a}{b}"
+      name: ""
+    - 
+      code: "\\frac{a}{b}"
+      name: ""
+- 
+  name: Relations
+  symbols: 
+    - 
+      code: "a = b"
+      name: ""
+    - 
+      code: "a \\neq b"
+      name: ""
+    - 
+      code: "a \\equiv b"
+      name: ""
+    - 
+      code: "a \\simeq b"
+      name: ""
+    - 
+      code: "a \\approx b"
+      name: ""
+    - 
+      code: "a < b"
+      name: ""
+    - 
+      code: "a > b"
+      name: ""
+    - 
+      code: "a \\le b"
+      name: ""
+    - 
+      code: "a \\ge b"
+      name: ""
+    - 
+      code: "a \\sim b"
+      name: ""
+    - 
+      code: "a \\perp b"
+      name: ""
+    - 
+      code: "a \\parallel b"
+      name: ""
+- 
+  name: Sets
+  symbols: 
+    - 
+      code: "a \\cap b"
+      name: ""
+    - 
+      code: "a \\cup b"
+      name: ""
+    - 
+      code: \emptyset
+      name: ""
+    - 
+      code: "a \\in b"
+      name: ""
+    - 
+      code: "a \\notin b"
+      name: ""
+    - 
+      code: "a \\subset b"
+      name: ""
+    - 
+      code: "a \\not \\subset b"
+      name: ""
+    - 
+      code: "a \\subseteq b"
+      name: ""
+    - 
+      code: "a \\not \\subseteq b"
+      name: ""
+- 
+  name: Logic
+  symbols: 
+    - 
+      code: \neg
+      name: ""
+    - 
+      code: \land
+      name: ""
+    - 
+      code: \lor
+      name: ""
+    - 
+      code: \rightarrow
+      name: ""
+    - 
+      code: \Rightarrow
+      name: ""
+    - 
+      code: \leftrightarrow
+      name: ""
+    - 
+      code: \Leftrightarrow
+      name: ""
+    - 
+      code: \iff
+      name: ""
+    - 
+      code: "\\forall x"
+      name: ""
+    - 
+      code: "\\exists x"
+      name: ""
+    - 
+      code: "\\nexists x"
+      name: ""
+- 
+  name: "Aligned Equations"
+  symbols: 
+    - 
+      code: |-
+          \begin{align*}
+          a & = 2 \times 3 + 1 \\
+             & = 6 + 1 \\
+             & = 7
+          \end{align*}
+      name: ""
+    - 
+      code: |-
+          \begin{align*}
+          a + a & = b + b \\
+          2a     & = 2b \\
+          a       & =b
+          \end{align*}
+      name: ""
+- 
+  name: "Piecewise Function"
+  symbols: 
+    - 
+      code: |-
+          f(x) =
+          \begin{cases}
+          1                           & \text {if $x=1$} \\
+          1+x+x^2+\cdots   & \text{if $x = 0$} \\
+          \dfrac{1}{1-x}        & \text{if $x = -1$} \\
+          \text{undefined}    & \text{otherwise} \\
+          \end{cases}
+      name: ""
+- 
+  name: Vectors
+  symbols: 
+    - 
+      code: "\\vec{r}"
+      name: ""
+    - 
+      code: "\\mathbf{r}"
+      name: ""
+    - 
+      code: "f(\\vec{r},t)"
+      name: ""
+    - 
+      code: "f(\\mathbf{r},t)"
+      name: ""
+- 
+  name: Matrices
+  symbols: 
+    - 
+      code: |-
+          \left|\begin{matrix}
+          a & b \\
+          c & d
+          \end{matrix}\right|
+      name: ""
+    - 
+      code: |-
+          \begin{pmatrix}
+          a & b \\
+          c & d
+          \end{pmatrix}
+      name: ""
+    - 
+      code: |-
+          \left[\begin{matrix}
+          a & b \\
+          c & d
+          \end{matrix}\right]
+      name: ""
+    - 
+      code: |-
+          \left\{\begin{matrix}
+          a & b \\
+          c & d
+          \end{matrix}\right\}
+      name: ""
+    - 
+      code: |-
+          \begin{pmatrix}
+          a & b & c \\
+          d & e & f \\
+          g & h & i
+          \end{pmatrix}
+      name: ""
+    - 
+      code: |-
+          \left|\begin{matrix}
+          a & b & c \\
+          d & e & f \\
+          g & h & i
+          \end{matrix}\right|
+      name: ""
+    - 
+      code: |-
+          \left[\begin{matrix}
+          a & b & c \\
+          d & e & f \\
+          g & h & i
+          \end{matrix}\right]
+      name: ""
+    - 
+      code: |-
+          \left\{\begin{matrix}
+          a & b & c \\
+          d & e & f \\
+          g & h & i
+          \end{matrix}\right\}
+      name: ""
+    - 
+      code: |-
+          \begin{pmatrix}
+          a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\
+          a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
+          \vdots  & \vdots  & \ddots & \vdots  \\
+          a_{m,1} & a_{m,2} & \cdots & a_{m,n}
+          \end{pmatrix}
+      name: ""
+- 
+  name: Table
+  symbols: 
+    - 
+      code: |-
+          \begin{array}{|c|c|c|}
+          \hline
+          \text{Product}   & \text{Price} & \text{Qty} \\
+          \hline
+          \text{A}            & 1               & 1 \\
+          \hline
+          \text{B}            & 1               & 1 \\
+          \hline
+          \end{array}
+      name: ""

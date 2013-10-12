@@ -1,8 +1,9 @@
+<div ng-controller='NoteEditorCtrl' ng-init='init()'>
 <%= form_for(@note) do |f| %>
   <div class="container container-left row">
     <div class='col-md-3'>
       <div class='cheatsheet'>
-        <%= render "manual" %>
+        <%= render "cheatsheet" %>
       </div>
     </div>
 
@@ -11,7 +12,7 @@
         <p>
           <input name="note[title]" class='title' placeholder="Note's title (optional)" value="<%= @note.title %>"/>
           <% if @note.id.blank? %>
-            <strong><a href="javascript:" style='color: blue' onclick="addExample()">HOW THIS WORKS</a></strong>
+            <strong><a href="javascript:" style='color: blue' ng-click="howItWorks()">HOW THIS WORKS</a></strong>
           <% end %>
         </p>
       </div>
@@ -22,17 +23,14 @@
           <p>
             <button type="submit" id="save_button" class="btn-primary btn"><%= submit_text_for(@note) %> </button>
             &nbsp;
-            <a href="javascript:" style='color: blue' onclick="clearInput()">Clear</a>
+            <a href="javascript:" style='color: blue' ng-click="clear()">Clear</a>
           </p>
         </div>
         <div class='col-md-6'>
-          <div class="render" id="preview_div"></div>
+          <div class="render" id="render"></div>
         </div>
       </div>
     </div>
   </div>
 <% end %>
-
-<script language="javascript">$(function () {
-  newNoteInit();
-});</script>
+</div>
