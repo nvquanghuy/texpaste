@@ -41,6 +41,15 @@ app.controller 'NoteEditorCtrl', ['$scope', '$http', '$timeout', ($scope, $http,
     fetchSymbols()
     setupEditor()
 
+    # Delay sending mixpanel when search term changes
+    filterTimeout = null
+    $scope.$watch "filterTerm", ->
+      $timeout.cancel(filterTimeout) if filterTimeout
+      filterTimeout = $timeout( ->
+        mixpanel.track('filter', { term: $scope.filterTerm } ) if $scope.filterTerm.length > 1
+      , 1000)
+
+
   $scope.insertSymbol = (str) ->
     $code.insertAtCaret str
     $code[0].focus()
@@ -61,7 +70,7 @@ app.controller 'NoteEditorCtrl', ['$scope', '$http', '$timeout', ($scope, $http,
 
   $scope.symbolClick = (str) ->
     $scope.insertSymbol(' ' + str + ' ')
-    mixpanel.track "Symbol Click", { code: str }
+    mixpanel.track "symbol_click", { code: str }
 
   $scope.howItWorks = ->
     $code.val $("#example").val()
