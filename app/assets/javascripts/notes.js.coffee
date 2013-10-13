@@ -56,9 +56,12 @@ app.controller 'NoteEditorCtrl', ['$scope', '$http', '$timeout', ($scope, $http,
       , false
     )
 
-
   $scope.filterMatch = (term, code) ->
     code.toLowerCase().indexOf(term) != -1
+
+  $scope.symbolClick = (str) ->
+    $scope.insertSymbol(' ' + str + ' ')
+    mixpanel.track "Symbol Click", { code: str }
 
   $scope.howItWorks = ->
     $code.val $("#example").val()

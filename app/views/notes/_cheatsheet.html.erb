@@ -13,7 +13,7 @@
       {{group.name}}</h5>
     <ul ng-show='(isFiltering() && groupMatch(filterTerm, group)) || (!isFiltering() && isVisible)'>
       <li ng-repeat="symbol in group.symbols" ng-class='{highlight: isFiltering() && filterMatch(filterTerm, symbol.code)}'>
-        <span title='{{symbol.code}}' ng-click="insertSymbol(' ' + symbol.code + ' ')">${{symbol.code}}$</span>
+        <span title='{{symbol.code}}' ng-click="symbolClick(symbol.code)">${{symbol.code}}$</span>
       </li>
     </ul>
   </div>
