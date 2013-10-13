@@ -66,6 +66,18 @@ html, body {
   border-radius: 2px;
 }
 
+.alert {
+  border-radius: 2px;
+  padding: 10px;
+}
+
+.alert-notice {
+  // Copy from Bootstrap's alert-info
+  color: #3a87ad;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
 .shadow {
   box-shadow: 0 2px 2px #bababa;
   -moz-box-shadow: 0 2px 2px #bababa;
@@ -181,3 +193,4 @@ ul.notes li {
 .form-auth {
   max-width: 330px;
 }
+

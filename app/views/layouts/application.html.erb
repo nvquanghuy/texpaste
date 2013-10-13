@@ -46,8 +46,18 @@
     </div>
   </div>
 
-  <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+  <% unless flash.empty? %>
+    <div class="container container-left">
+      <% flash.each do |name, msg| %>
+        <div class="row">
+          <div class='col-md-offset-1 col-md-8 alert alert-<%=name%>'>
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <%= msg %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
   <% end %>
 
   <%= yield %>
