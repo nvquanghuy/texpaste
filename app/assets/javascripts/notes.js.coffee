@@ -1,5 +1,6 @@
 app.controller 'NoteEditorCtrl', ['$scope', '$http', '$timeout', ($scope, $http, $timeout) ->
   $scope.groups = []
+  $scope.filterTerm = ''
 
   renderTimeout = null;
   $render = $('#render')
@@ -42,6 +43,20 @@ app.controller 'NoteEditorCtrl', ['$scope', '$http', '$timeout', ($scope, $http,
     $code[0].focus()
     delayRender()
 
+  $scope.groupMatch = (term, group) ->
+    return true if $scope.filterMatch(term, group.name)
+
+    # Check if at least 1 member of the group matches
+    group.symbols.reduce(
+      (running, elm) ->
+        running || $scope.filterMatch(term, "#{elm.code} #{elm.name}")
+      , false
+    )
+
+
+  $scope.filterMatch = (term, code) ->
+    code.toLowerCase().indexOf(term) != -1
+
   $scope.howItWorks = ->
     $code.val $("#example").val()
     delayRender()
@@ -50,4 +65,6 @@ app.controller 'NoteEditorCtrl', ['$scope', '$http', '$timeout', ($scope, $http,
     $code.val('')
     delayRender()
 
+  $scope.isFiltering = ->
+    !!$scope.filterTerm and $scope.filterTerm.length > 0
 ]

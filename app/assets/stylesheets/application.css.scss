@@ -124,6 +124,11 @@ html, body {
   h5 {
     clear: both;
     cursor: pointer;
+    padding: 3px 2px;
+  }
+
+  .highlight {
+    background-color: #fffa9e;
   }
 }
 
@@ -194,3 +199,6 @@ ul.notes li {
   max-width: 330px;
 }
 
+#search {
+  width: 100%;
+}

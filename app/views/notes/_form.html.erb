@@ -1,36 +1,39 @@
 <div ng-controller='NoteEditorCtrl' ng-init='init()'>
-<%= form_for(@note) do |f| %>
   <div class="container container-left row">
     <div class='col-md-3'>
       <div class='cheatsheet'>
         <%= render "cheatsheet" %>
       </div>
     </div>
-
-    <div class='col-md-9 editor-wrapper'>
-      <div class='row col-md-12'>
-        <p>
-          <input name="note[title]" class='title' placeholder="Note's title (optional)" value="<%= @note.title %>"/>
-          <% if @note.id.blank? %>
-            <strong><a href="javascript:" style='color: blue' ng-click="howItWorks()">HOW THIS WORKS</a></strong>
-          <% end %>
-        </p>
-      </div>
-
-      <div class='row'>
-        <div class='col-md-6'>
-          <p><textarea placeholder="Enter your math note..." name="note[content]" id="codearea"><%= render "text_first" %></textarea> </p>
+    <%= form_for(@note) do |f| %>
+      <div class='col-md-9 editor-wrapper'>
+        <div class='row col-md-12'>
           <p>
-            <button type="submit" id="save_button" class="btn-primary btn"><%= submit_text_for(@note) %> </button>
-            &nbsp;
-            <a href="javascript:" style='color: blue' ng-click="clear()">Clear</a>
+            <input name="note[title]" class='title' placeholder="Note's title (optional)" value="<%= @note.title %>"/>
+            <% if @note.id.blank? %>
+              <strong><a href="javascript:" style='color: blue' ng-click="howItWorks()">HOW THIS WORKS</a></strong>
+            <% end %>
           </p>
         </div>
-        <div class='col-md-6'>
-          <div class="render" id="render"></div>
+
+        <div class='row'>
+          <div class='col-md-6'>
+            <p>
+              <textarea placeholder="Enter your math note..." name="note[content]" id="codearea"><%= render "text_first" %></textarea>
+            </p>
+
+            <p>
+              <button type="submit" id="save_button" class="btn-primary btn"><%= submit_text_for(@note) %> </button>
+              &nbsp;
+              <a href="javascript:" style='color: blue' ng-click="clear()">Clear</a>
+            </p>
+          </div>
+          <div class='col-md-6'>
+            <div class="render" id="render"></div>
+          </div>
         </div>
-      </div>
+    <% end %>
     </div>
   </div>
-<% end %>
+
 </div>
