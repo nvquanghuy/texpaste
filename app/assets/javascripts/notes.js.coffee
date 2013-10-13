@@ -8,6 +8,7 @@ app.controller 'NoteEditorCtrl', ['$scope', '$http', '$timeout', ($scope, $http,
   fetchSymbols = ->
     $http.get('/symbols.json').success (response) ->
       $scope.groups = response;
+      MathJax.Hub.queue.Push ["Typeset", MathJax.Hub, "manual"]
 
   render = ->
     content_str = convertTextToMathJaxReady($code.val())

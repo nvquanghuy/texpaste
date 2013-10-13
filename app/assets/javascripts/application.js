@@ -15,7 +15,7 @@
 //= require angular
 //= require bootstrap
 //= require jquery_rangyinputs
-//= require app
+//= require init
 //= require editor
 //= require_tree
 
