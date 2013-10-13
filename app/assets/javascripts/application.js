@@ -17,6 +17,5 @@
 //= require jquery_rangyinputs
 //= require app
 //= require editor
-//= require note_new
 //= require_tree
 
