@@ -19,7 +19,8 @@
         <div class='row'>
           <div class='col-md-6'>
             <p>
-              <textarea placeholder="Enter your math note..." name="note[content]" id="codearea"><%= render "text_first" %></textarea>
+              <textarea placeholder="Enter your math note..." name="note[content]" id="codearea"
+                ><%= (@note.id.blank? ? render("text_first") : @note.content) %></textarea>
             </p>
 
             <p>
