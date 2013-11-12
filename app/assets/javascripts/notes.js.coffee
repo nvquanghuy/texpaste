@@ -81,11 +81,11 @@ app.controller 'NoteEditorCtrl', ['$scope', '$http', '$timeout', ($scope, $http,
     delayRender()
 
   $scope.insertInline = ->
-    $code.surroundSelectedText("\\( ", " \\)")
+    $code.surroundSelectedText("$ ", " $")
     delayRender()
 
   $scope.insertBlock = ->
-    $code.surroundSelectedText("\\[\n", "\n\\]")
+    $code.surroundSelectedText("$$\n", "\n$$")
     delayRender()
 
   $scope.isFiltering = ->
