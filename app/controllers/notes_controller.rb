@@ -16,6 +16,8 @@ class NotesController < ApplicationController
   def show
     @note = Note.find_by_slug(params[:slug])
 
+    @note.title.present? ? @title = @note.title : @title = "note:#{@note.slug}"
+
     if @note == nil
       redirect_to("/", notice: 'There is no note found')
       return
