@@ -10,7 +10,7 @@ class NotesController < ApplicationController
 
   def manage
     # TODO: Check for auth
-    @author_notes = Note.where(:user_id => current_user.id)
+    @author_notes = Note.where(:user_id => current_user.id).order('created_at DESC')
   end
 
   def show
