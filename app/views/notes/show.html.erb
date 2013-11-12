@@ -4,7 +4,7 @@
       <div style="background-color: #eee; padding:12px 10px; border: solid 1px #ddd">
         <div>
           <% if @note.title.present? %>
-            <h3><%= @note.title %></h3>
+            <h4><%= @note.title %></h4>
           <% end %>
 
           <div id="render_div" class="render render-show" style='width:97%'><%= simple_format @note.content.html_safe %></div>
@@ -55,7 +55,7 @@
 
           <br/>
         </div>
-      <% end #if      %>
+      <% end #if  %>
 
     </div>
   </div>
