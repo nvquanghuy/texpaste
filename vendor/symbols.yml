@@ -98,7 +98,16 @@
     - 
       code: "x_{k}^{n}"
       name: ""
-- 
+-
+  name: "Fractions and Binomials"
+  symbols:
+    -
+      code: "\\frac{a}{b}"
+      name: "Fraction"
+    -
+      code: "\\binom{a}{b}"
+      name: "Binomial"
+-
   name: Brackets
   symbols: 
     - 
@@ -290,13 +299,7 @@
     - 
       code: "a \\otimes b"
       name: ""
-    - 
-      code: "\\binom{a}{b}"
-      name: ""
-    - 
-      code: "\\frac{a}{b}"
-      name: ""
-- 
+-
   name: Relations
   symbols: 
     - 
