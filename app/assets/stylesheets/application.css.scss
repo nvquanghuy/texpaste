@@ -198,3 +198,8 @@ ul.notes li {
 #search {
   width: 100%;
 }
+
+.render-preview {
+  max-height: 400px;
+  overflow-y: auto;
+}
