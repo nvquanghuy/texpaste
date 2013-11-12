@@ -40,6 +40,7 @@ mixpanel.init("825ab1bde890ef7d34242bbdd35acf6a");</script><!-- end Mixpanel -->
 
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "About", about_path %></li>
         <% if current_user %>
           <li><%= link_to("Manage Notes", manage_path()) %></li>
           <li><%= link_to "Log out (#{current_user.email})", log_out_path %></li>
