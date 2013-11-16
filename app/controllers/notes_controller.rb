@@ -55,7 +55,7 @@ class NotesController < ApplicationController
 
     respond_to do |format|
       if @note.save
-        format.html { redirect_to show_path(@note.slug), notice: 'Note was successfully created.' }
+        format.html { redirect_to show_path(@note.slug) }
         format.json { render json: @note, status: :created, location: @note }
       else
         format.html { render action: "new" }
