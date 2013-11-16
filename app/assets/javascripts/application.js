@@ -16,6 +16,5 @@
 //= require bootstrap
 //= require jquery_rangyinputs
 //= require init
-//= require editor
 //= require_tree
 

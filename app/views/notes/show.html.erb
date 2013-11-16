@@ -55,12 +55,16 @@
 
           <br/>
         </div>
-      <% end #if  %>
+      <% end #if   %>
 
     </div>
   </div>
 </div>
 
 <script language="javascript">
-  $(function () { showNoteInit() });
+  $(function () {
+    <% unless current_user and current_user.id == @note.user_id %>
+      tp.trackViews(<%= @note.id %>);
+    <% end %>
+  });
 </script>

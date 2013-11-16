@@ -9,7 +9,7 @@ app.controller 'NoteEditorCtrl', ['$scope', '$http', '$timeout', ($scope, $http,
   fetchSymbols = ->
     $http.get('/symbols.json').success (response) ->
       $scope.groups = response;
-      $timeout( ->
+      $timeout(->
         MathJax.Hub.queue.Push ["Typeset", MathJax.Hub, "manual"]
       , 1000)
 
@@ -45,8 +45,8 @@ app.controller 'NoteEditorCtrl', ['$scope', '$http', '$timeout', ($scope, $http,
     filterTimeout = null
     $scope.$watch "filterTerm", ->
       $timeout.cancel(filterTimeout) if filterTimeout
-      filterTimeout = $timeout( ->
-        mixpanel.track('filter', { term: $scope.filterTerm } ) if $scope.filterTerm.length > 1
+      filterTimeout = $timeout(->
+        mixpanel.track('filter', { term: $scope.filterTerm }) if $scope.filterTerm.length > 1
       , 1000)
 
 
@@ -62,7 +62,7 @@ app.controller 'NoteEditorCtrl', ['$scope', '$http', '$timeout', ($scope, $http,
     group.symbols.reduce(
       (running, elm) ->
         running || $scope.filterMatch(term, "#{elm.code} #{elm.name}")
-      , false
+    , false
     )
 
   $scope.filterMatch = (term, code) ->

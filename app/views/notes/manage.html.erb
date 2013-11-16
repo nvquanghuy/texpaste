@@ -11,8 +11,9 @@
             <div class='meta'>
               <%= link_to("Note ##{note.slug}", show_path(note.slug)) %> <%= note.title %>
 
-              <span class='right'>
-              <%= link_to('Edit', edit_note_path(note.slug)) %>
+              <span class='pull-right'>
+                <strong>Views: </strong> <%= note.views %></strong> -
+                <%= link_to('Edit', edit_note_path(note.slug)) %> -
                 <%= link_to "Delete", {:action => "destroy", :id => note.id},
                             :confirm => "Are you sure?", :method => :delete %>
             </span>

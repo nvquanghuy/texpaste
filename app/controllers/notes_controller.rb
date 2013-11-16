@@ -27,7 +27,7 @@ class NotesController < ApplicationController
     if @note.user_id != nil then
       @author_notes = Note.where(:user_id => @note.user_id)
     end
-    
+
     respond_to do |format|
       format.html {
         render :show
@@ -86,5 +86,10 @@ class NotesController < ApplicationController
       format.html { redirect_to manage_path }
       format.json { head :no_content }
     end
+  end
+
+  def update_views
+    Note.where('id = ?', params[:id].to_i).update_all('views = views + 1')
+    render json: {ok: true}
   end
 end
