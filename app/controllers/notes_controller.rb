@@ -23,6 +23,11 @@ class NotesController < ApplicationController
       return
     end
 
+    if params[:raw]
+      render :text => @note.content, :content_type => 'text/plain'
+      return
+    end
+
     @author_notes = []
     if @note.user_id != nil then
       @author_notes = Note.where(:user_id => @note.user_id)

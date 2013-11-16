@@ -7,15 +7,18 @@
         </div>
 
         <div class='panel-body'>
-          <div id="render_div" class="render render-show" style='width:97%'><%= simple_format @note.content.html_safe %></div>
+          <div id="render_div" class="render render-show" style='width:97%'>
+            <%= simple_format @note.content.html_safe %>
+          </div>
         </div>
+
         <div class='panel-footer'>
           <div class='pull-right'>
+            <%= link_to 'Raw Source', show_raw_note_path(@note.slug) %>
+          </div>
+          <div>
             <small><em>Created <%= time_ago_in_words(@note.created_at) %> ago</em></small>
           </div>
-          <div><a href='javascript:void()' onclick='$("#source").toggle();' id='expand'>View Source</a></div>
-          <textarea id="source" readonly="readonly"
-                    style="display:none;width:97%;min-height:200px"><%= @note.content %></textarea>
         </div>
       </div>
       <div>

@@ -1,10 +1,14 @@
 Mathshare::Application.routes.draw do
+  root :to => 'notes#new'
 
   resources :notes
-  root :to => 'notes#new'
+
+  get "/n/:slug/raw" => 'notes#show', :as => :show_raw_note, :raw => true
   match "/n/:slug" => 'notes#show', :as => :show
+
   match "/n/:slug/edit" => 'notes#edit', :as => :edit_note
   match "/manage" => 'notes#manage', :as => :manage
+
   post "/notes/update_views" => 'notes#update_views', as: :update_views
 
   get "logout" => "sessions#destroy", :as => "log_out"
