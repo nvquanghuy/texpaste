@@ -26,15 +26,23 @@
 
 .render {
   background-color: white;
-  border: 1px solid #bbb;
-  border-radius: 2px;
-  padding: 6px;
+  padding: 3px;
   min-height: 400px;
   line-height: 140%;
   width: 100%;
   font-size: 12px;
 }
 
+.render-preview {
+  border: 1px solid #bbb;
+  border-radius: 2px;
+}
+
 .render-show {
   font-size: 13px;
+}
+
+.share-note {
+  width:100%;
+  font-size: 12px;
 }
