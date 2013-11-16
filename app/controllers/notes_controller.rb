@@ -30,7 +30,7 @@ class NotesController < ApplicationController
 
     @author_notes = []
     if @note.user_id != nil then
-      @author_notes = Note.where(:user_id => @note.user_id)
+      @author_notes = Note.where(:user_id => @note.user_id).order('created_at DESC')
     end
 
     respond_to do |format|
