@@ -5,7 +5,7 @@
         <%= render "cheatsheet" %>
       </div>
     </div>
-    <%= form_for(@note) do |f| %>
+    <%= form_for(@note, html: {honeypot: true } ) do |f| %>
       <div class='col-md-9 editor-wrapper'>
         <div class='row col-md-12'>
           <p>

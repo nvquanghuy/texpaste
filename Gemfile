@@ -6,6 +6,7 @@ gem 'rails', '3.2.3'
 gem 'rspec-rails'
 gem 'thin'
 gem 'pg'
+gem 'honeypot-captcha'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
