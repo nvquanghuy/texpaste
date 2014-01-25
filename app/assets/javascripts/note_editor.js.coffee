@@ -15,7 +15,7 @@ app.controller 'NoteEditorCtrl', ['$scope', '$http', '$timeout', ($scope, $http,
 
 
   render = ->
-    content_str = convertTextToMathJaxReady($code.val())
+    content_str = convertTextToMathJaxReady(escapeXss($code.val()))
 
     pos = $render.scrollTop()
     $render.html content_str

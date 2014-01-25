@@ -1,21 +1,35 @@
-$(function () {
-});
+function escapeXss(string) {
+  var entityMap = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': '&quot;',
+    "'": '&#39;',
+    "/": '&#x2F;'
+  };
 
-function convertTextToMathJaxReady(a) {
-  if (!a) return "";
-
-  var b = a.split("\n");
-  for (var c = 0; c < b.length; c++) {
-    var d = 0;
-    while (d < b[c].length && b[c][d] === " ") d++;
-    var e = "";
-    for (var f = 0; f < d; f++) e += "&nbsp;";
-    e != "" && (b[c] = e + b[c])
-  }
-  return b.join("<br>");
+  return String(string).replace(/[&<>"'\/]/g, function (s) {
+    return entityMap[s];
+  });
 }
 
-$(function() {
+function convertTextToMathJaxReady(string) {
+  //  This one just append &nbsp to beginning of lines
+
+  if (!string) return "";
+
+  var lines = string.split("\n");
+  for (var i = 0; i < lines.length; i++) {
+    var d = 0;
+    while (d < lines[i].length && lines[i][d] === " ") d++;
+    var e = "";
+    for (var f = 0; f < d; f++) e += "&nbsp;";
+    e != "" && (lines[i] = e + lines[i])
+  }
+  return lines.join("<br>");
+}
+
+$(function () {
   $.fn.extend({
     insertAtCaret: function (myValue) {
       return this.each(function (i) {
