@@ -1,13 +1,13 @@
 <div ng-controller='NoteEditorCtrl' ng-init='init()' class='container'>
   <div class="row">
-    <div class='col-md-3'>
+    <div class='col-sm-3'>
       <div class='cheatsheet'>
         <%= render "cheatsheet" %>
       </div>
     </div>
     <%= form_for(@note, html: {honeypot: true } ) do |f| %>
-      <div class='col-md-9 editor-wrapper'>
-        <div class='row col-md-12'>
+      <div class='col-sm-9 editor-wrapper'>
+        <div class='row col-sm-12'>
           <p>
             <input name="note[title]" class='title' placeholder="Note's title (optional)" value="<%= @note.title %>"/>
             <% if @note.id.blank? %>
@@ -17,7 +17,7 @@
         </div>
 
         <div class='row'>
-          <div class='col-md-6'>
+          <div class='col-sm-6'>
             <p>
               <textarea placeholder="Enter your math note..." name="note[content]" id="codearea"
                 ><%= (@note.id.blank? ? render("text_first") : @note.content) %></textarea>
@@ -25,11 +25,11 @@
 
 
           </div>
-          <div class='col-md-6'>
+          <div class='col-sm-6'>
             <div class="render render-preview" id="render"></div>
           </div>
         </div>
-        <div class='row col-md-12'>
+        <div class='row col-sm-12'>
           <p>
             <button type="submit" id="save_button" class="btn-primary btn"><%= submit_text_for(@note) %> </button>
             &nbsp;
