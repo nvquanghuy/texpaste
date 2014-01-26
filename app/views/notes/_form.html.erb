@@ -23,15 +23,21 @@
                 ><%= (@note.id.blank? ? render("text_first") : @note.content) %></textarea>
             </p>
 
-            <p>
-              <button type="submit" id="save_button" class="btn-primary btn"><%= submit_text_for(@note) %> </button>
-              &nbsp;
-              <a href="javascript:" style='color: blue' ng-click="clear()">Clear</a>
-            </p>
+
           </div>
           <div class='col-md-6'>
             <div class="render render-preview" id="render"></div>
           </div>
+        </div>
+        <div class='row col-md-12'>
+          <p>
+            <button type="submit" id="save_button" class="btn-primary btn"><%= submit_text_for(@note) %> </button>
+            &nbsp;
+            <a href="javascript:" style='color: blue' ng-click="clear()">Clear</a>
+            <% if @note.id.blank? and current_user.blank? %>
+              <span class="pull-right" style="vertical-align: middle"><a href="/signup?r=helptext">Sign up for an account</a> to save and edit your notes.</span>
+            <% end %>
+          </p>
         </div>
     <% end %>
     </div>
