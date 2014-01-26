@@ -16,12 +16,12 @@ class NotesController < ApplicationController
   def show
     @note = Note.find_by_slug(params[:slug])
 
-    @title = @note.get_title
-
     if @note == nil
       redirect_to("/", notice: 'There is no note found')
       return
     end
+
+    @title = @note.get_title
 
     if params[:raw]
       render :text => @note.content, :content_type => 'text/plain'
